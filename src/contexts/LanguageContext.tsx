@@ -8,7 +8,11 @@ interface LanguageContextType {
   t: (key: string) => string
 }
 
-type TranslationData = Record<string, string | Record<string, string>>
+interface TranslationObject {
+  [key: string]: string | TranslationObject
+}
+
+type TranslationData = TranslationObject
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
@@ -46,7 +50,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   // Translation function
   const t = (key: string): string => {
     const keys = key.split('.')
-    let value: string | Record<string, string> | undefined = translations
+    let value: string | TranslationObject | undefined = translations
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
