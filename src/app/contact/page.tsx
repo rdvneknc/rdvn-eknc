@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from 'lucide-react'
 import LocationDisplayContact from '@/components/LocationDisplayContact'
-// import MapboxMap from '@/components/MapboxMap'
+import MapboxMap from '@/components/MapboxMap'
 
 export default function Contact() {
   return (
@@ -117,13 +117,7 @@ export default function Contact() {
                 {/* Interactive Map */}
                 <div className="mt-8">
                   <h3 className="text-xl font-semibold text-white mb-4">Interactive Location Map</h3>
-                  <div className="w-full h-96 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                      <p className="text-gray-300">Map integration coming soon!</p>
-                      <p className="text-sm text-gray-400 mt-2">Dynamic location detection active</p>
-                    </div>
-                  </div>
+                  <MapboxMap />
                 </div>
               </div>
 
