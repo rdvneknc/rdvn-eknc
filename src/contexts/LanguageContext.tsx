@@ -8,6 +8,8 @@ interface LanguageContextType {
   t: (key: string) => string
 }
 
+type TranslationData = Record<string, string | Record<string, string>>
+
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export const useLanguage = () => {
@@ -24,7 +26,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [language, setLanguage] = useState<'en' | 'tr'>('en')
-  const [translations, setTranslations] = useState<Record<string, any>>({})
+  const [translations, setTranslations] = useState<TranslationData>({})
 
   // Load translations
   useEffect(() => {
@@ -44,7 +46,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   // Translation function
   const t = (key: string): string => {
     const keys = key.split('.')
-    let value: any = translations
+    let value: string | Record<string, string> | undefined = translations
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
