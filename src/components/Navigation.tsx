@@ -6,7 +6,6 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
-import LocationDisplay from './LocationDisplay'
 
 const Navigation = () => {
   const pathname = usePathname()
@@ -50,10 +49,6 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            
-            {/* Location Display */}
-            <LocationDisplay />
-            
             <LanguageToggle />
           </div>
 
@@ -85,9 +80,8 @@ const Navigation = () => {
                 </Link>
               ))}
               
-              {/* Mobile Location & Language */}
-              <div className="flex items-center justify-between px-3 py-2 mt-4 border-t border-gray-800 pt-4">
-                <LocationDisplay />
+              {/* Mobile Language */}
+              <div className="flex items-center justify-center px-3 py-2 mt-4 border-t border-gray-800 pt-4">
                 <LanguageToggle />
               </div>
             </div>

@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, MessageCircle, MapPin, Clock, Send } from 'lucide-react'
+import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from 'lucide-react'
+import LocationDisplayContact from '@/components/LocationDisplayContact'
 
 export default function Contact() {
   return (
@@ -92,21 +93,23 @@ export default function Contact() {
                   <div className="flex-shrink-0">
                     <MapPin className="w-6 h-6 text-green-400 mt-1" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Location</h3>
-                    <p className="text-gray-300">Remote / Global</p>
-                    <p className="text-sm text-gray-400">Available for remote collaboration</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <Clock className="w-6 h-6 text-orange-400 mt-1" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Availability</h3>
-                    <p className="text-gray-300">Monday - Friday</p>
-                    <p className="text-sm text-gray-400">Flexible hours for international clients</p>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-white mb-3">Location</h3>
+                    <div className="space-y-3">
+                      <div className="card bg-gray-800/30 border-gray-700">
+                        <div className="flex items-center space-x-3">
+                          <div className="flex-shrink-0">
+                            <MapPin className="w-5 h-5 text-green-400" />
+                          </div>
+                          <div>
+                            <p className="text-white font-medium">Tallinn, Estonia 🇪🇪</p>
+                            <p className="text-sm text-gray-400">My base location</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <LocationDisplayContact />
+                    </div>
                   </div>
                 </div>
               </div>
