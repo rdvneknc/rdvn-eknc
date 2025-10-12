@@ -3,9 +3,10 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, X, MapPin } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
+import LocationDisplay from './LocationDisplay'
 
 const Navigation = () => {
   const pathname = usePathname()
@@ -50,11 +51,8 @@ const Navigation = () => {
               </Link>
             ))}
             
-            {/* Location Badge */}
-            <div className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-gray-800/50 border border-gray-600 text-gray-300">
-              <MapPin className="w-4 h-4 text-purple-400" />
-              <span className="text-sm">Tallinn, Estonia</span>
-            </div>
+            {/* Location Display */}
+            <LocationDisplay />
             
             <LanguageToggle />
           </div>
@@ -89,10 +87,7 @@ const Navigation = () => {
               
               {/* Mobile Location & Language */}
               <div className="flex items-center justify-between px-3 py-2 mt-4 border-t border-gray-800 pt-4">
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <MapPin className="w-4 h-4 text-purple-400" />
-                  <span className="text-sm">Tallinn, Estonia</span>
-                </div>
+                <LocationDisplay />
                 <LanguageToggle />
               </div>
             </div>
