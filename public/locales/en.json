@@ -1,0 +1,38 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "localization": "Localization",
+    "development": "Development",
+    "customerExperience": "Customer Experience",
+    "contact": "Contact"
+  },
+  "home": {
+    "tagline": "Bridging language, technology, and people",
+    "description": "Experienced professional specializing in English education, localization, and software development. Creating meaningful connections between cultures, languages, and technology.",
+    "learnMore": "Learn More About Me",
+    "getInTouch": "Get In Touch",
+    "whatIDo": "What I Do",
+    "servicesDescription": "Combining linguistic expertise with technical skills to deliver exceptional results",
+    "localization": {
+      "title": "Localization & Translation",
+      "description": "Expert translation and localization services across multiple languages"
+    },
+    "development": {
+      "title": "Development",
+      "description": "Modern web applications with React, Next.js, and Java"
+    },
+    "customerExperience": {
+      "title": "Customer Experience",
+      "description": "Exceptional communication and user support expertise"
+    },
+    "languageEducation": {
+      "title": "Language Education",
+      "description": "English language teaching and communication training"
+    },
+    "learnMoreLink": "Learn more",
+    "readyToWork": "Ready to work together?",
+    "readyDescription": "Let's discuss how I can help you with your localization, development, or communication needs.",
+    "startConversation": "Start a Conversation"
+  }
+}

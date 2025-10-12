@@ -1,0 +1,38 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "localization": "Yerelleştirme",
+    "development": "Geliştirme",
+    "customerExperience": "Müşteri Deneyimi",
+    "contact": "İletişim"
+  },
+  "home": {
+    "tagline": "Dil, teknoloji ve insanları buluşturuyorum",
+    "description": "İngilizce eğitimi, yerelleştirme ve yazılım geliştirme alanında deneyimli profesyonel. Kültürler, diller ve teknoloji arasında anlamlı bağlantılar kuruyorum.",
+    "learnMore": "Hakkımda Daha Fazla",
+    "getInTouch": "İletişime Geç",
+    "whatIDo": "Ne Yapıyorum",
+    "servicesDescription": "Dil uzmanlığı ile teknik becerileri birleştirerek olağanüstü sonuçlar elde ediyorum",
+    "localization": {
+      "title": "Yerelleştirme ve Çeviri",
+      "description": "Birden fazla dilde uzman çeviri ve yerelleştirme hizmetleri"
+    },
+    "development": {
+      "title": "Geliştirme",
+      "description": "React, Next.js ve Java ile modern web uygulamaları"
+    },
+    "customerExperience": {
+      "title": "Müşteri Deneyimi",
+      "description": "Olağanüstü iletişim ve kullanıcı desteği uzmanlığı"
+    },
+    "languageEducation": {
+      "title": "Dil Eğitimi",
+      "description": "İngilizce dil öğretimi ve iletişim eğitimi"
+    },
+    "learnMoreLink": "Daha fazla bilgi",
+    "readyToWork": "Birlikte çalışmaya hazır mısınız?",
+    "readyDescription": "Yerelleştirme, geliştirme veya iletişim ihtiyaçlarınızda size nasıl yardımcı olabileceğimi konuşalım.",
+    "startConversation": "Sohbete Başla"
+  }
+}
