@@ -104,6 +104,14 @@ const MapboxMap = () => {
         }}
         style={{ width: '100%', height: '100%' }}
         mapStyle="mapbox://styles/mapbox/dark-v11"
+        interactive={false}
+        scrollZoom={false}
+        boxZoom={false}
+        dragRotate={false}
+        dragPan={false}
+        keyboard={false}
+        doubleClickZoom={false}
+        touchZoomRotate={false}
         attributionControl={false}
         logoPosition="bottom-left"
       >
