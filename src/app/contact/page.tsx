@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from 'lucide-react'
-import LocationDisplayContact from '@/components/LocationDisplayContact'
-import MapboxMap from '@/components/MapboxMap'
 
 export default function Contact() {
 
@@ -95,30 +93,11 @@ export default function Contact() {
                   <div className="flex-shrink-0">
                     <MapPin className="w-6 h-6 text-green-400 mt-1" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-white mb-3">Location</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div className="card bg-gray-800/30 border-gray-700">
-                        <div className="flex items-center space-x-3">
-                          <div className="flex-shrink-0">
-                            <MapPin className="w-5 h-5 text-green-400" />
-                          </div>
-                          <div>
-                            <p className="text-white font-medium">Tallinn, Estonia 🇪🇪</p>
-                            <p className="text-sm text-gray-400">My base location</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <LocationDisplayContact />
-                    </div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-1">Location</h3>
+                    <p className="text-gray-300">Tallinn, Estonia 🇪🇪</p>
+                    <p className="text-sm text-gray-400">My base location</p>
                   </div>
-                </div>
-
-                {/* Interactive Map */}
-                <div className="mt-8">
-                  <h3 className="text-xl font-semibold text-white mb-4">Interactive Location Map</h3>
-                  <MapboxMap />
                 </div>
               </div>
 
