@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from 'lucide-react'
+import { Mail, Linkedin, Github, MessageCircle, MapPin, Send, MessageSquare } from 'lucide-react'
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -105,6 +105,24 @@ export default function Contact() {
                       github.com/rdvneknc
                     </a>
                     <p className="text-sm text-gray-400">Check out my development projects</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <MessageSquare className="w-6 h-6 text-green-400 mt-1" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-1">WhatsApp</h3>
+                    <a 
+                      href="https://wa.me/905530948822?text=Merhaba%2C%20websitenizden%20ulaşıyorum"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-green-400 hover:text-green-300 transition-colors"
+                    >
+                      +90 553 094 88 22
+                    </a>
+                    <p className="text-sm text-gray-400">Send me a message on WhatsApp</p>
                   </div>
                 </div>
 
@@ -275,6 +293,13 @@ export default function Contact() {
                   url: 'https://github.com/rdvneknc',
                   description: 'Code repositories',
                   color: 'text-gray-300 hover:text-white'
+                },
+                {
+                  icon: MessageSquare,
+                  name: 'WhatsApp',
+                  url: 'https://wa.me/905530948822?text=Merhaba%2C%20websitenizden%20ulaşıyorum',
+                  description: 'Quick message',
+                  color: 'text-green-400 hover:text-green-300'
                 },
                 {
                   icon: Mail,
