@@ -4,6 +4,25 @@ import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from 'lucide-react'
 
 export default function Contact() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    const firstName = formData.get('firstName') as string
+    const lastName = formData.get('lastName') as string
+    const email = formData.get('email') as string
+    const subject = formData.get('subject') as string
+    const message = formData.get('message') as string
+    
+    // Mailto link oluştur
+    const mailtoLink = `mailto:ridvanekinci92@gmail.com?subject=${encodeURIComponent(subject || 'Contact Form Submission')}&body=${encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`
+    )}`
+    
+    // Mailto linkini aç
+    window.location.href = mailtoLink
+  }
 
   return (
     <div className="pt-16">
@@ -48,7 +67,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-1">Email</h3>
-                    <p className="text-gray-300">ridvan.ekinci@example.com</p>
+                    <p className="text-gray-300">ridvanekinci92@gmail.com</p>
                     <p className="text-sm text-gray-400">I typically respond within 24 hours</p>
                   </div>
                 </div>
@@ -78,12 +97,12 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-1">GitHub</h3>
                     <a 
-                      href="https://github.com/ridvanekinci" 
+                      href="https://github.com/rdvneknc" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
-                      github.com/ridvanekinci
+                      github.com/rdvneknc
                     </a>
                     <p className="text-sm text-gray-400">Check out my development projects</p>
                   </div>
@@ -131,7 +150,7 @@ export default function Contact() {
             >
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
@@ -141,6 +160,7 @@ export default function Contact() {
                       type="text"
                       id="firstName"
                       name="firstName"
+                      required
                       className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-colors"
                       placeholder="Your first name"
                     />
@@ -153,6 +173,7 @@ export default function Contact() {
                       type="text"
                       id="lastName"
                       name="lastName"
+                      required
                       className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-colors"
                       placeholder="Your last name"
                     />
@@ -180,6 +201,7 @@ export default function Contact() {
                   <select
                     id="subject"
                     name="subject"
+                    required
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white transition-colors"
                   >
                     <option value="">Select a topic</option>
@@ -250,14 +272,14 @@ export default function Contact() {
                 {
                   icon: Github,
                   name: 'GitHub',
-                  url: 'https://github.com/ridvanekinci',
+                  url: 'https://github.com/rdvneknc',
                   description: 'Code repositories',
                   color: 'text-gray-300 hover:text-white'
                 },
                 {
                   icon: Mail,
                   name: 'Email',
-                  url: 'mailto:ridvan.ekinci@example.com',
+                  url: 'mailto:ridvanekinci92@gmail.com',
                   description: 'Direct contact',
                   color: 'text-purple-400 hover:text-purple-300'
                 }
@@ -301,7 +323,7 @@ export default function Contact() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:ridvan.ekinci@example.com"
+                href="mailto:ridvanekinci92@gmail.com"
                 className="btn-primary inline-flex items-center"
               >
                 Send an Email

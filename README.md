@@ -61,7 +61,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contact
 
-- **Email**: ridvan.ekinci@example.com
+- **Email**: ridvanekinci92@gmail.com
 - **LinkedIn**: [linkedin.com/in/ridvanekinci](https://linkedin.com/in/ridvanekinci)
 - **GitHub**: [github.com/rdvneknc](https://github.com/rdvneknc)
 
