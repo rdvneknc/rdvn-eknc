@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Rıdvan Ekinci - Portfolio',
   description: 'Bridging language, technology, and people',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
