@@ -99,26 +99,19 @@ const LocationDisplayContact = () => {
         </motion.div>
         
         <div className="flex-1">
-          <div className="flex items-center space-x-2 mb-1">
-            <p className="text-white font-medium">
-              {distance > 0 ? (
-                <>
-                  <span className="text-purple-400">{distance.toLocaleString()}km</span>
-                  <span className="text-gray-300 mx-1">away</span>
-                </>
-              ) : (
-                <span className="text-purple-400">Local</span>
-              )}
-            </p>
-          </div>
+          <p className="text-white font-medium mb-1">
+            {distance > 0 ? (
+              <>
+                <span className="text-purple-400">{distance.toLocaleString()}km</span>
+                <span className="text-gray-300 mx-1">away</span>
+              </>
+            ) : (
+              <span className="text-purple-400">Local</span>
+            )}
+          </p>
           <p className="text-sm text-gray-400">
             {location.city}, {location.country} {flag}
           </p>
-          {distance > 0 && (
-            <p className="text-xs text-gray-500 mt-1">
-              I&apos;m from Tallinn, Estonia, roughly {distance.toLocaleString()}km away from your current location
-            </p>
-          )}
         </div>
       </div>
     </motion.div>

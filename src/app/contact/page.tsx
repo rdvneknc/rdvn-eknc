@@ -1,11 +1,40 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from 'lucide-react'
 import LocationDisplayContact from '@/components/LocationDisplayContact'
 import MapboxMap from '@/components/MapboxMap'
+import { getVisitorLocation, getCountryFlag } from '@/services/geolocation'
+
+interface LocationData {
+  city: string
+  country: string
+  latitude: number
+  longitude: number
+  countryCode: string
+}
+
+interface DistanceResult {
+  distance: number
+  location: LocationData
+}
 
 export default function Contact() {
+  const [visitorLocation, setVisitorLocation] = useState<DistanceResult | null>(null)
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        const data = await getVisitorLocation()
+        setVisitorLocation(data)
+      } catch (err) {
+        console.error('Failed to fetch visitor location:', err)
+      }
+    }
+    fetchLocation()
+  }, [])
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -96,7 +125,12 @@ export default function Contact() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-white mb-3">Location</h3>
-                    <div className="space-y-3">
+                    {visitorLocation && (
+                      <p className="text-sm text-gray-300 mb-4">
+                        I&apos;m from Tallinn, Estonia 🇪🇪, roughly <strong className="text-purple-400">{visitorLocation.distance.toLocaleString()}km</strong> away from your current location.
+                      </p>
+                    )}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div className="card bg-gray-800/30 border-gray-700">
                         <div className="flex items-center space-x-3">
                           <div className="flex-shrink-0">
@@ -209,6 +243,11 @@ export default function Contact() {
                     <option value="training">Communication Training</option>
                     <option value="other">Other</option>
                   </select>
+                  {visitorLocation && (
+                    <p className="text-xs text-gray-400 mt-2">
+                      {visitorLocation.location.city}, {visitorLocation.location.country} {getCountryFlag(visitorLocation.location.countryCode)} according to your IP address
+                    </p>
+                  )}
                 </div>
 
                 <div>
