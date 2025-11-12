@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { MapPin, Navigation } from 'lucide-react'
-import { getVisitorLocation, getCountryFlag } from '@/services/geolocation'
+import { getVisitorLocation } from '@/services/geolocation'
 
 // Dynamic imports for react-map-gl
 const Map = dynamic(() => import('react-map-gl').then(mod => mod.default), { ssr: false })
@@ -74,9 +74,8 @@ const MapboxMap = () => {
     )
   }
 
-  const { distance, location } = locationData
+  const { location } = locationData
   const visitorCoords = [location.longitude, location.latitude]
-  const flag = getCountryFlag(location.countryCode)
 
   // Create line geometry between Tallinn and visitor location
   const lineData = {
@@ -163,33 +162,6 @@ const MapboxMap = () => {
           />
         </Source>
       </Map>
-
-      {/* Map Info */}
-      <div className="absolute bottom-4 left-4 right-4">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="bg-gray-900/90 backdrop-blur-sm rounded-lg p-4 border border-gray-700"
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-white font-medium">
-                I&apos;m from Tallinn, Estonia 🇪🇪
-              </p>
-              <p className="text-sm text-gray-400">
-                roughly <span className="text-red-400 font-semibold">{distance.toLocaleString()}km</span> away from your current location
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="text-sm text-gray-300">
-                {location.city}, {location.country} {flag}
-              </p>
-              <p className="text-xs text-gray-400">according to your IP address</p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
     </motion.div>
   )
 }

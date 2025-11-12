@@ -33,8 +33,17 @@ function calculateDistance(lat1: number, lng1: number, lat2: number, lng2: numbe
 // Get visitor's location using IP geolocation
 export async function getVisitorLocation(): Promise<DistanceResult> {
   try {
-    // Using ipapi.co (free tier: 1000 requests/day)
-    const response = await fetch('https://ipapi.co/json/')
+    // Try ip-api.com (free, CORS enabled, 45 requests/minute)
+    // Note: ip-api.com doesn't support HTTPS on free tier, so we use HTTP
+    // In production, consider using a proxy or paid service for HTTPS
+    const response = await fetch('http://ip-api.com/json/?fields=status,message,country,countryCode,city,lat,lon', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+      // Add cache to reduce API calls
+      cache: 'no-store',
+    })
     
     if (!response.ok) {
       throw new Error('Failed to fetch location data')
@@ -42,16 +51,16 @@ export async function getVisitorLocation(): Promise<DistanceResult> {
     
     const data = await response.json()
     
-    if (data.error) {
-      throw new Error(data.reason || 'Location service error')
+    if (data.status === 'fail') {
+      throw new Error(data.message || 'Location service error')
     }
     
     const location: LocationData = {
       city: data.city || 'Unknown',
-      country: data.country_name || 'Unknown',
-      latitude: parseFloat(data.latitude) || 0,
-      longitude: parseFloat(data.longitude) || 0,
-      countryCode: data.country_code || 'XX'
+      country: data.country || 'Unknown',
+      latitude: parseFloat(data.lat) || 0,
+      longitude: parseFloat(data.lon) || 0,
+      countryCode: data.countryCode || 'XX'
     }
     
     // Calculate distance from Tallinn
@@ -69,7 +78,7 @@ export async function getVisitorLocation(): Promise<DistanceResult> {
   } catch (error) {
     console.error('Error fetching location:', error)
     
-    // Fallback data
+    // Fallback data - silently fail and return default location
     return {
       distance: 0,
       location: {
