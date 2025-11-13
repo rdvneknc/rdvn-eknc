@@ -118,11 +118,10 @@ export default function Contact() {
                       href="https://wa.me/905530948822?text=Merhaba%2C%20websitenizden%20ulaşıyorum"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-400 hover:text-green-300 transition-colors"
+                      className="text-green-400 hover:text-green-300 transition-colors inline-block"
                     >
-                      +90 553 094 88 22
+                      Send me a message on WhatsApp
                     </a>
-                    <p className="text-sm text-gray-400">Send me a message on WhatsApp</p>
                   </div>
                 </div>
 
