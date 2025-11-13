@@ -1,9 +1,43 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, MessageCircle, MapPin, Send, MessageSquare } from 'lucide-react'
+import { getVisitorLocation } from '@/services/geolocation'
+
+interface LocationData {
+  city: string
+  country: string
+  latitude: number
+  longitude: number
+  countryCode: string
+}
+
+interface DistanceResult {
+  distance: number
+  location: LocationData
+}
 
 export default function Contact() {
+  const [locationData, setLocationData] = useState<DistanceResult | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        setLoading(true)
+        const data = await getVisitorLocation()
+        setLocationData(data)
+      } catch (err) {
+        console.error('Failed to fetch location:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchLocation()
+  }, [])
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
@@ -132,7 +166,19 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-1">Location</h3>
                     <p className="text-gray-300">Tallinn, Estonia 🇪🇪</p>
-                    <p className="text-sm text-gray-400">My base location</p>
+                    {loading ? (
+                      <p className="text-sm text-gray-400">Detecting your location...</p>
+                    ) : locationData && locationData.distance > 0 ? (
+                      <p className="text-sm text-gray-400">
+                        I&apos;m in Tallinn, Estonia, roughly{' '}
+                        <span className="text-purple-400 font-semibold">
+                          {locationData.distance.toLocaleString()} km
+                        </span>{' '}
+                        away from your current location, according to your IP address.
+                      </p>
+                    ) : (
+                      <p className="text-sm text-gray-400">My base location</p>
+                    )}
                   </div>
                 </div>
               </div>
