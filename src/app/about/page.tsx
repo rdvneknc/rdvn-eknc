@@ -18,7 +18,7 @@ export default function About() {
               About <span className="gradient-text">Rıdvan</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              A passionate professional bridging the gap between language, technology, and human connection
+              Bilingual Localization & Customer Experience Specialist with a full-stack development background, combining language expertise, technical skills, and AI-driven workflow optimization
             </p>
           </motion.div>
         </div>
@@ -37,21 +37,25 @@ export default function About() {
               <h2 className="text-3xl font-bold mb-6">My Journey</h2>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  My professional journey began in English language education, where I discovered 
-                  my passion for helping people communicate effectively across cultural boundaries. 
-                  This foundation in language teaching provided me with deep insights into how 
-                  people learn, communicate, and connect.
+                  My professional journey began in English language education at Middle East Technical University, 
+                  where I developed a strong foundation in language teaching and cross-cultural communication. 
+                  This background provided me with deep insights into how people learn, communicate, and connect 
+                  across different cultures.
                 </p>
                 <p>
-                  As technology became increasingly important in education and business, I expanded 
-                  my expertise into localization and software development. This unique combination 
-                  of linguistic and technical skills allows me to create solutions that are not 
-                  just functional, but also culturally appropriate and user-friendly.
+                  Over the years, I expanded my expertise into translation and localization, working with companies 
+                  like Limon Games and Kopazar.com. I&apos;ve specialized in game localization, website translation, 
+                  and providing bilingual customer support for both local and international clients.
                 </p>
                 <p>
-                  Today, I work at the intersection of language, technology, and user experience, 
-                  helping organizations reach global audiences while maintaining the human touch 
-                  that makes communication meaningful.
+                  Recently, I completed a Full Stack Developer Bootcamp and started freelancing as a developer, 
+                  building custom web applications, QR menu systems, and admin dashboards. I also leverage AI-driven 
+                  workflow optimization to enhance productivity and deliver exceptional results.
+                </p>
+                <p>
+                  Today, I combine my language expertise, technical skills, and customer experience background to 
+                  help organizations reach global audiences while maintaining the human touch that makes communication 
+                  meaningful.
                 </p>
               </div>
             </motion.div>
@@ -93,32 +97,44 @@ export default function About() {
           <div className="space-y-8">
             {[
               {
-                icon: BookOpen,
-                title: 'English Language Education',
-                period: '2015 - Present',
-                description: 'Extensive experience in English language teaching, curriculum development, and student assessment. Specialized in helping non-native speakers achieve fluency and confidence in professional communication.',
-                skills: ['Curriculum Design', 'Student Assessment', 'Cultural Communication', 'Language Learning Strategies']
-              },
-              {
-                icon: Globe,
-                title: 'Localization & Translation',
-                period: '2018 - Present',
-                description: 'Professional translation and localization services across multiple languages. Expert in adapting content for different cultural contexts while maintaining brand voice and technical accuracy.',
-                skills: ['Multi-language Translation', 'Cultural Adaptation', 'Technical Documentation', 'Quality Assurance']
+                icon: Users,
+                title: 'Customer Experience & Localization Specialist',
+                company: 'Kopazar.com',
+                period: 'Sep 2024 - Present',
+                description: 'Manage customer communication processes and provide bilingual support for both local and international clients. Attend meetings with foreign partners as an interpreter and assist in establishing business collaborations. Contribute to website translation and localization when needed.',
+                skills: ['Bilingual Support', 'Customer Communication', 'Interpreting', 'Website Localization', 'Business Collaboration']
               },
               {
                 icon: Code,
-                title: 'Software Development',
-                period: '2020 - Present',
-                description: 'Full-stack development using modern technologies including React, Next.js, and Java. Focus on creating user-friendly applications with excellent internationalization support.',
-                skills: ['React/Next.js', 'Java Development', 'UI/UX Design', 'Internationalization']
+                title: 'Freelance Developer',
+                company: 'Self-employed',
+                period: 'Jun 2024 - Present',
+                description: 'Develop custom web applications, QR menu systems, and admin dashboards for individual clients using JavaScript and React. Also build small indie games as creative side projects focused on design and user experience.',
+                skills: ['React', 'JavaScript', 'Web Applications', 'QR Menu Systems', 'Admin Dashboards', 'Game Development']
               },
               {
-                icon: Users,
-                title: 'Customer Experience',
-                period: '2019 - Present',
-                description: 'Expert in customer communication, user support, and experience optimization. Proven track record in building relationships and solving complex communication challenges.',
-                skills: ['Customer Support', 'User Experience', 'Communication Strategy', 'Problem Solving']
+                icon: Globe,
+                title: 'Freelance Translator',
+                company: 'Self-employed',
+                period: 'Apr 2012 - June 2023',
+                description: 'Provided English–Turkish translation services for a wide range of clients, including medical professionals and academic researchers. Translated medical reports, research articles, theses, legal contracts, and game or technology-related content with focus on accuracy and context adaptation.',
+                skills: ['Medical Translation', 'Academic Translation', 'Legal Translation', 'Game Translation', 'Technical Documentation']
+              },
+              {
+                icon: Globe,
+                title: 'Localization Specialist',
+                company: 'Limon Games',
+                period: 'Jan 2016 - Oct 2021',
+                description: 'Localized and translated mobile games, website content, and app store listings. Collaborated with the development team to ensure accurate in-game text adaptation and handled communication with international clients.',
+                skills: ['Game Localization', 'Mobile Games', 'Website Translation', 'App Store Localization', 'International Communication']
+              },
+              {
+                icon: BookOpen,
+                title: 'Translator & Content Specialist',
+                company: 'Kopazar.com',
+                period: 'Oct 2011 - Nov 2015',
+                description: 'Assisted international customers through bilingual communication in English and Turkish. Translated and localized website content, participated in live meetings as an interpreter, and produced blog articles tailored for the gaming and e-commerce audience.',
+                skills: ['Bilingual Communication', 'Website Localization', 'Interpreting', 'Content Creation', 'Blog Writing']
               }
             ].map((experience, index) => (
               <motion.div
@@ -136,10 +152,13 @@ export default function About() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                       <h3 className="text-xl font-semibold">{experience.title}</h3>
                       <span className="text-sm text-purple-400 font-medium">{experience.period}</span>
                     </div>
+                    {experience.company && (
+                      <p className="text-sm text-purple-400 mb-3">{experience.company}</p>
+                    )}
                     <p className="text-gray-300 mb-4">{experience.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {experience.skills.map((skill) => (

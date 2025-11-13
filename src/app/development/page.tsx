@@ -48,25 +48,25 @@ export default function Development() {
               {
                 category: 'Frontend',
                 icon: Globe,
-                technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+                technologies: ['React', 'Redux', 'JavaScript (ES6+)', 'HTML', 'CSS', 'Tailwind'],
                 color: 'from-blue-500 to-cyan-500'
               },
               {
                 category: 'Backend',
                 icon: Database,
-                technologies: ['Java', 'Spring Boot', 'Node.js', 'Express', 'REST APIs'],
+                technologies: ['Java', 'Spring Boot', 'SQL', 'RESTful APIs', 'Firebase'],
                 color: 'from-green-500 to-emerald-500'
               },
               {
-                category: 'Mobile',
+                category: 'Game Development',
                 icon: Smartphone,
-                technologies: ['React Native', 'Expo', 'iOS Development', 'Android Development'],
+                technologies: ['C#', 'Unity', 'Game Design', 'Indie Games'],
                 color: 'from-purple-500 to-pink-500'
               },
               {
                 category: 'Tools',
                 icon: GitBranch,
-                technologies: ['Git', 'Docker', 'AWS', 'Vercel', 'Figma'],
+                technologies: ['Git', 'GitHub', 'Vercel', 'VS Code', 'IntelliJ IDEA'],
                 color: 'from-orange-500 to-red-500'
               }
             ].map((stack, index) => (
@@ -119,34 +119,34 @@ export default function Development() {
           <div className="grid lg:grid-cols-2 gap-8">
             {[
               {
-                title: 'E-Learning Platform',
-                description: 'A comprehensive online learning management system built with React and Next.js, featuring course management, student progress tracking, and multilingual support.',
-                technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB'],
-                features: ['User Authentication', 'Course Management', 'Progress Tracking', 'Multi-language Support', 'Responsive Design'],
+                title: 'QR Menu Systems',
+                description: 'Custom QR menu systems for restaurants and cafes, allowing customers to view menus on their mobile devices. Built with React and responsive design for seamless user experience.',
+                technologies: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind'],
+                features: ['QR Code Integration', 'Responsive Design', 'Menu Management', 'Mobile-friendly', 'Fast Loading'],
                 status: 'Completed',
                 link: '#'
               },
               {
-                title: 'Business Management API',
-                description: 'RESTful API for business process management with Java Spring Boot, including user management, inventory tracking, and reporting features.',
-                technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'JWT', 'Docker'],
-                features: ['REST API', 'Authentication', 'Data Validation', 'Database Design', 'API Documentation'],
+                title: 'Admin Dashboards',
+                description: 'Custom admin dashboards for businesses to manage their operations, including user management, data visualization, and reporting features. Built with React and Java Spring Boot.',
+                technologies: ['React', 'Java', 'Spring Boot', 'SQL', 'RESTful APIs'],
+                features: ['User Management', 'Data Visualization', 'Reporting', 'Authentication', 'Database Integration'],
                 status: 'Completed',
                 link: '#'
               },
               {
                 title: 'Portfolio Website',
-                description: 'Personal portfolio website with modern design, smooth animations, and responsive layout. Built with Next.js and Framer Motion for enhanced user experience.',
-                technologies: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+                description: 'Personal portfolio website with modern design, smooth animations, and responsive layout. Built with Next.js, React, and Tailwind CSS for enhanced user experience.',
+                technologies: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Vercel'],
                 features: ['Responsive Design', 'Smooth Animations', 'Dark Theme', 'SEO Optimized', 'Fast Loading'],
                 status: 'Current Project',
                 link: '#'
               },
               {
-                title: 'Mobile Task Manager',
-                description: 'Cross-platform mobile application for task and project management with real-time synchronization and offline support.',
-                technologies: ['React Native', 'Expo', 'Firebase', 'Redux', 'TypeScript'],
-                features: ['Cross-platform', 'Real-time Sync', 'Offline Support', 'Push Notifications', 'User Collaboration'],
+                title: 'Indie Game Projects',
+                description: 'Small indie games as creative side projects focused on design and user experience. Built with Unity and C# for engaging gameplay and modern graphics.',
+                technologies: ['C#', 'Unity', 'Game Design', '2D/3D Graphics'],
+                features: ['Game Design', 'Unity Development', 'User Experience', 'Creative Projects', 'Side Projects'],
                 status: 'In Development',
                 link: '#'
               }
@@ -302,11 +302,11 @@ export default function Development() {
               <h3 className="text-xl font-semibold mb-4 text-purple-400">Frontend Development</h3>
               <div className="space-y-4">
                 {[
-                  { skill: 'React/Next.js', level: 90 },
-                  { skill: 'TypeScript', level: 85 },
-                  { skill: 'Tailwind CSS', level: 90 },
-                  { skill: 'Framer Motion', level: 80 },
-                  { skill: 'Responsive Design', level: 95 }
+                  { skill: 'React', level: 85 },
+                  { skill: 'JavaScript (ES6+)', level: 90 },
+                  { skill: 'HTML/CSS', level: 90 },
+                  { skill: 'Tailwind', level: 85 },
+                  { skill: 'Redux', level: 75 }
                 ].map((item) => (
                   <div key={item.skill}>
                     <div className="flex justify-between mb-1">
@@ -334,11 +334,11 @@ export default function Development() {
               <h3 className="text-xl font-semibold mb-4 text-blue-400">Backend Development</h3>
               <div className="space-y-4">
                 {[
-                  { skill: 'Java/Spring Boot', level: 85 },
-                  { skill: 'Node.js/Express', level: 80 },
-                  { skill: 'Database Design', level: 85 },
-                  { skill: 'REST APIs', level: 90 },
-                  { skill: 'Authentication', level: 85 }
+                  { skill: 'Java', level: 85 },
+                  { skill: 'Spring Boot', level: 80 },
+                  { skill: 'SQL', level: 85 },
+                  { skill: 'RESTful APIs', level: 90 },
+                  { skill: 'Firebase', level: 75 }
                 ].map((item) => (
                   <div key={item.skill}>
                     <div className="flex justify-between mb-1">

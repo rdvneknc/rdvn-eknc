@@ -128,27 +128,30 @@ export default function CustomerExperience() {
           <div className="space-y-8">
             {[
               {
-                title: 'Multilingual Customer Support',
-                description: 'Led customer support initiatives for international markets, providing assistance in English, Turkish, and Spanish. Reduced average resolution time by 35% while maintaining 95% customer satisfaction.',
-                metrics: ['35% faster resolution', '95% satisfaction rate', '3 languages supported'],
+                title: 'Bilingual Customer Support',
+                company: 'Kopazar.com',
+                description: 'Manage customer communication processes and provide bilingual support for both local and international clients. Attend meetings with foreign partners as an interpreter and assist in establishing business collaborations. Contribute to website translation and localization when needed.',
+                metrics: ['Bilingual Support', 'Interpreting', 'Business Collaboration', 'Website Localization'],
                 icon: MessageCircle
               },
               {
-                title: 'User Onboarding Optimization',
-                description: 'Redesigned the customer onboarding process based on user feedback and behavior analysis. Improved user activation rates by 40% and reduced support tickets by 25%.',
-                metrics: ['40% higher activation', '25% fewer tickets', 'Improved user retention'],
-                icon: TrendingUp
-              },
-              {
-                title: 'Cross-Cultural Communication Training',
-                description: 'Developed and delivered training programs for customer-facing teams on cultural sensitivity and effective cross-cultural communication. Enhanced team performance and customer satisfaction.',
-                metrics: ['Team training delivered', 'Cultural awareness improved', 'Customer satisfaction up'],
+                title: 'Customer Communication & Interpreting',
+                company: 'Kopazar.com',
+                description: 'Assisted international customers through bilingual communication in English and Turkish. Participated in live meetings as an interpreter for international clients and produced blog articles tailored for the gaming and e-commerce audience.',
+                metrics: ['Bilingual Communication', 'Live Interpreting', 'Content Creation', 'Customer Engagement'],
                 icon: Users
               },
               {
-                title: 'Customer Feedback Integration',
-                description: 'Established systematic processes for collecting, analyzing, and implementing customer feedback. Created feedback loops that directly influenced product development and service improvements.',
-                metrics: ['Feedback system implemented', 'Product improvements made', 'Customer voice amplified'],
+                title: 'Website Localization & Content',
+                company: 'Kopazar.com',
+                description: 'Translated and localized website content to ensure consistency across global content. Produced blog articles and marketing materials tailored for the target audience, improving international customer engagement.',
+                metrics: ['Website Localization', 'Content Creation', 'Blog Writing', 'Marketing Materials'],
+                icon: TrendingUp
+              },
+              {
+                title: 'Cross-Cultural Communication',
+                description: 'Specialized in cross-cultural communication, helping clients navigate different cultural contexts and business practices. Established strong relationships with international partners through effective communication and cultural sensitivity.',
+                metrics: ['Cross-Cultural Communication', 'Cultural Sensitivity', 'International Relations', 'Business Partnerships'],
                 icon: Heart
               }
             ].map((experience, index) => (
@@ -167,7 +170,12 @@ export default function CustomerExperience() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-3">{experience.title}</h3>
+                    <div className="mb-3">
+                      <h3 className="text-xl font-semibold">{experience.title}</h3>
+                      {experience.company && (
+                        <p className="text-sm text-purple-400 mt-1">{experience.company}</p>
+                      )}
+                    </div>
                     <p className="text-gray-300 mb-4">{experience.description}</p>
                     <div className="flex flex-wrap gap-3">
                       {experience.metrics.map((metric) => (
