@@ -69,10 +69,6 @@ export default function Home() {
               <span className="gradient-text">Ekinci</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              {t('home.tagline')}
-            </p>
-            
             <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
               {t('home.description')}
             </p>
@@ -174,7 +170,9 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              {t('home.readyToWork')} <span className="gradient-text">together</span>?
+              {t('home.readyToWork')}
+              
+              <span className="gradient-text"> together?</span>
             </h2>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
               {t('home.readyDescription')}
@@ -183,6 +181,15 @@ export default function Home() {
               {t('home.startConversation')}
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Certificates */}
+      <section className="py-12 bg-gray-800/30">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-sm text-gray-500">
+            {t('home.certificates')}
+          </p>
         </div>
       </section>
     </div>

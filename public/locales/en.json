@@ -8,31 +8,33 @@
     "contact": "Contact"
   },
   "home": {
-    "tagline": "Bridging language, technology, and people",
+    "tagline": "Bilingual Localization & Full-Stack Developer combining language expertise, customer experience, and AI-driven workflow optimization.",
     "description": "Bilingual Localization & Customer Experience Specialist with a full-stack development background, combining language expertise, technical skills, and AI-driven workflow optimization.",
     "learnMore": "Learn More About Me",
     "getInTouch": "Get In Touch",
-    "whatIDo": "What I Do",
+    "whatIDo": "What I",
     "servicesDescription": "Combining linguistic expertise with technical skills to deliver exceptional results",
     "localization": {
       "title": "Localization & Translation",
-      "description": "Expert translation and localization services across multiple languages"
+      "description": "Expert in website, app, and game localization with SEO and content optimization experience."
     },
     "development": {
       "title": "Development",
-      "description": "Modern web applications with React, Next.js, and Java"
+      "description": "Building modern web applications using React, Next.js, and Java, with backend integration through Spring Boot, Firebase, and REST APIs."
     },
     "customerExperience": {
       "title": "Customer Experience",
-      "description": "Exceptional communication and user support expertise"
+      "description": "Providing bilingual customer support, localization coordination, and client communication for e-commerce and gaming platforms."
     },
     "languageEducation": {
       "title": "Language Education",
-      "description": "English language teaching and communication training"
+      "description": "Previously taught English and communication skills through volunteer-based education programs."
     },
     "learnMoreLink": "Learn more",
-    "readyToWork": "Ready to work together?",
-    "readyDescription": "Let's discuss how I can help you with your localization, development, or communication needs.",
+    "readyToWork": "Ready to work",
+    "readyDescription": "Let's discuss how I can help you with localization, development, or AI-driven content solutions.",
+    "aiAutomation": "I integrate AI tools like ChatGPT and OpenAI API into my workflow to enhance translation quality, automate content creation, and streamline customer communication.",
+    "certificates": "Coded by me with Next.js, React, Tailwind CSS — and a dangerous amount of coffee ☕",
     "startConversation": "Start a Conversation"
   }
 }

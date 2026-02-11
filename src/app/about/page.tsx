@@ -18,7 +18,7 @@ export default function About() {
               About <span className="gradient-text">Rıdvan</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Bilingual Localization & Customer Experience Specialist with a full-stack development background, combining language expertise, technical skills, and AI-driven workflow optimization
+              Backend system architecture and scalable digital infrastructure, with a bilingual background in international digital markets
             </p>
           </motion.div>
         </div>
@@ -31,31 +31,34 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <h2 className="text-3xl font-bold mb-6">My Journey</h2>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  My professional journey began in English language education at Middle East Technical University, 
-                  where I developed a strong foundation in language teaching and cross-cultural communication. 
-                  This background provided me with deep insights into how people learn, communicate, and connect 
-                  across different cultures.
+                  My professional journey began in English Language Teaching at Middle East Technical University, 
+                  where I developed strong analytical thinking and cross-cultural communication skills.
                 </p>
                 <p>
-                  Over the years, I expanded my expertise into translation and localization, working with companies 
-                  like Limon Games and Kopazar.com. I&apos;ve specialized in game localization, website translation, 
-                  and providing bilingual customer support for both local and international clients.
+                  During my university years, I became increasingly interested in software development and completed 
+                  an intensive Full Stack Developer Bootcamp, where I focused on Java, backend systems, and web 
+                  application development. This technical foundation allowed me to transition into backend development 
+                  professionally.
                 </p>
                 <p>
-                  Recently, I completed a Full Stack Developer Bootcamp and started freelancing as a developer, 
-                  building custom web applications, QR menu systems, and admin dashboards. I also leverage AI-driven 
-                  workflow optimization to enhance productivity and deliver exceptional results.
+                  Since 2014, I have been co-founder and Lead Backend Developer at Kopazar, a digital marketplace 
+                  specializing in digital goods and in-game currencies. I have been responsible for backend architecture, 
+                  API development, database design, and infrastructure optimization for high-traffic systems.
                 </p>
                 <p>
-                  Today, I combine my language expertise, technical skills, and customer experience background to 
-                  help organizations reach global audiences while maintaining the human touch that makes communication 
-                  meaningful.
+                  Alongside my primary role, I have also provided backend consultancy services and worked on 
+                  project-based translation and localization tasks, particularly in the gaming and digital platforms 
+                  sector.
+                </p>
+                <p>
+                  Today, I focus primarily on backend system architecture and scalable digital infrastructure while 
+                  leveraging my bilingual background in international digital markets.
                 </p>
               </div>
             </motion.div>
@@ -63,8 +66,8 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, margin: "-100px" }}
               className="lg:justify-self-end"
             >
               {/* Profile placeholder */}
@@ -82,66 +85,58 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">
               Professional <span className="gradient-text">Experience</span>
             </h2>
             <p className="text-gray-400">
-              A diverse background spanning education, technology, and communication
+              From language teaching to backend architecture and digital marketplace development
             </p>
           </motion.div>
 
           <div className="space-y-8">
             {[
               {
-                icon: Users,
-                title: 'Customer Experience & Localization Specialist',
-                company: 'Kopazar.com',
-                period: 'Sep 2024 - Present',
-                description: 'Manage customer communication processes and provide bilingual support for both local and international clients. Attend meetings with foreign partners as an interpreter and assist in establishing business collaborations. Contribute to website translation and localization when needed.',
-                skills: ['Bilingual Support', 'Customer Communication', 'Interpreting', 'Website Localization', 'Business Collaboration']
+                icon: Code,
+                title: 'Co-founder & Lead Backend Developer',
+                company: 'Kopazar',
+                period: '2014 - Present',
+                description: 'Digital marketplace specializing in digital goods and in-game currencies. Responsible for backend architecture, API development, database design, and infrastructure optimization for high-traffic systems.',
+                skills: ['Backend Architecture', 'API Development', 'Database Design', 'Infrastructure', 'High-Traffic Systems']
               },
               {
                 icon: Code,
-                title: 'Freelance Developer',
-                company: 'Self-employed',
-                period: 'Jun 2024 - Present',
-                description: 'Develop custom web applications, QR menu systems, and admin dashboards for individual clients using JavaScript and React. Also build small indie games as creative side projects focused on design and user experience.',
-                skills: ['React', 'JavaScript', 'Web Applications', 'QR Menu Systems', 'Admin Dashboards', 'Game Development']
+                title: 'Backend Consultancy',
+                company: 'Freelance',
+                period: 'Ongoing',
+                description: 'Provide backend consultancy services for various projects, supporting scalable system design and technical implementation.',
+                skills: ['System Architecture', 'Backend Development', 'Technical Consulting']
               },
               {
                 icon: Globe,
-                title: 'Freelance Translator',
-                company: 'Self-employed',
-                period: 'Apr 2012 - June 2023',
-                description: 'Provided English–Turkish translation services for a wide range of clients, including medical professionals and academic researchers. Translated medical reports, research articles, theses, legal contracts, and game or technology-related content with focus on accuracy and context adaptation.',
-                skills: ['Medical Translation', 'Academic Translation', 'Legal Translation', 'Game Translation', 'Technical Documentation']
-              },
-              {
-                icon: Globe,
-                title: 'Localization Specialist',
-                company: 'Limon Games',
-                period: 'Jan 2016 - Oct 2021',
-                description: 'Localized and translated mobile games, website content, and app store listings. Collaborated with the development team to ensure accurate in-game text adaptation and handled communication with international clients.',
-                skills: ['Game Localization', 'Mobile Games', 'Website Translation', 'App Store Localization', 'International Communication']
+                title: 'Translation & Localization',
+                company: 'Project-based / Freelance',
+                period: 'Ongoing',
+                description: 'Project-based translation and localization tasks, particularly in the gaming and digital platforms sector, leveraging bilingual expertise for international markets.',
+                skills: ['Game Localization', 'Digital Platforms', 'Bilingual', 'Translation']
               },
               {
                 icon: BookOpen,
-                title: 'Translator & Content Specialist',
-                company: 'Kopazar.com',
-                period: 'Oct 2011 - Nov 2015',
-                description: 'Assisted international customers through bilingual communication in English and Turkish. Translated and localized website content, participated in live meetings as an interpreter, and produced blog articles tailored for the gaming and e-commerce audience.',
-                skills: ['Bilingual Communication', 'Website Localization', 'Interpreting', 'Content Creation', 'Blog Writing']
+                title: 'English Language Teaching',
+                company: 'Middle East Technical University',
+                period: 'Earlier career',
+                description: 'Started professional journey in English Language Teaching, developing strong analytical thinking and cross-cultural communication skills.',
+                skills: ['Language Teaching', 'Cross-cultural Communication', 'Analytical Thinking']
               }
             ].map((experience, index) => (
               <motion.div
                 key={experience.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 className="card"
               >
@@ -184,8 +179,8 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">
@@ -223,7 +218,7 @@ export default function About() {
                 key={value.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 className="card text-center"
               >
