@@ -17,7 +17,6 @@ const Navigation = () => {
     { href: '/about', label: t('navigation.about') },
     { href: '/localization', label: t('navigation.localization') },
     { href: '/development', label: t('navigation.development') },
-    { href: '/customer-experience', label: t('navigation.customerExperience') },
     { href: '/contact', label: t('navigation.contact') },
   ]
 

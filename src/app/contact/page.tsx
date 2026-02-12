@@ -191,7 +191,6 @@ export default function Contact() {
                     'Localization Services',
                     'Web Development',
                     'Technical Consultation',
-                    'Customer Experience',
                     'Cross-cultural Training'
                   ].map((area) => (
                     <div key={area} className="flex items-center">

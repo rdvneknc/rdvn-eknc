@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Code, Globe, MessageCircle, Users } from 'lucide-react'
+import { ArrowRight, Code, Globe, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -109,7 +109,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: Globe,
@@ -122,12 +122,6 @@ export default function Home() {
                 title: t('home.development.title'),
                 description: t('home.development.description'),
                 href: '/development'
-              },
-              {
-                icon: Users,
-                title: t('home.customerExperience.title'),
-                description: t('home.customerExperience.description'),
-                href: '/customer-experience'
               },
               {
                 icon: MessageCircle,
