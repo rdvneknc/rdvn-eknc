@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Contact form messages — keep local only (privacy)
+/data/db/messages.json
+
+# Portfolio data + thumbnails are tracked in git for Vercel deploy.
+# Workflow: edit in local admin → commit data/db/portfolio.json + public/uploads/thumbnails/ → push
+
 # vercel
 .vercel
 

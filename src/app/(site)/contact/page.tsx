@@ -21,6 +21,9 @@ interface DistanceResult {
 export default function Contact() {
   const [locationData, setLocationData] = useState<DistanceResult | null>(null)
   const [loading, setLoading] = useState(true)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   useEffect(() => {
     const fetchLocation = async () => {
@@ -38,24 +41,39 @@ export default function Contact() {
     fetchLocation()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
-    
-    const firstName = formData.get('firstName') as string
-    const lastName = formData.get('lastName') as string
-    const email = formData.get('email') as string
-    const subject = formData.get('subject') as string
-    const message = formData.get('message') as string
-    
-    // Mailto link oluştur
-    const mailtoLink = `mailto:ridvanekinci92@gmail.com?subject=${encodeURIComponent(subject || 'Contact Form Submission')}&body=${encodeURIComponent(
-      `Name: ${firstName} ${lastName}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`
-    )}`
-    
-    // Mailto linkini aç
-    window.location.href = mailtoLink
+
+    setSubmitting(true)
+    setSubmitError(null)
+    setSubmitSuccess(false)
+
+    try {
+      const response = await fetch('/api/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setSubmitSuccess(true)
+      form.reset()
+    } catch {
+      setSubmitError('Could not send your message. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -291,12 +309,22 @@ export default function Contact() {
 
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="w-full btn-primary inline-flex items-center justify-center"
                 >
-                  Send Message
+                  {submitting ? 'Sending...' : 'Send Message'}
                   <Send className="ml-2" size={20} />
                 </button>
               </form>
+
+              {submitSuccess && (
+                <p className="text-sm text-green-400 mt-4 text-center">
+                  Message sent successfully. I&apos;ll get back to you soon.
+                </p>
+              )}
+              {submitError && (
+                <p className="text-sm text-red-400 mt-4 text-center">{submitError}</p>
+              )}
 
               <p className="text-sm text-gray-400 mt-4 text-center">
                 I&apos;ll get back to you within 24 hours. For urgent matters, please mention it in your message.
