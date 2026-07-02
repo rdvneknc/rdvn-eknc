@@ -6,6 +6,8 @@ export const siteConfig = {
   tagline: 'Creative Ads · Localization · Game Industry',
   logo: '/logo/ridvan-ekinci-logo.webp',
   heroImage: '/logo/lastback.webp',
+  /** Mobile-only hero background — set path when asset is ready */
+  heroMobileImage: '' as string | undefined,
   ctaBackgroundImage: '/logo/bottom2.webp',
 }
 

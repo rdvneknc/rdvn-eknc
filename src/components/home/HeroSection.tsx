@@ -9,12 +9,27 @@ import { heroHighlights, siteConfig } from '@/data/site'
 const highlightIcons = [Gamepad2, Sparkles, Zap]
 
 const HeroSection = () => {
+  const hasMobileBg = Boolean(siteConfig.heroMobileImage)
+
   return (
-    <section className="hero">
+    <section className={`hero ${hasMobileBg ? 'hero--has-mobile-bg' : ''}`}>
       {siteConfig.heroImage && (
-        <div className="hero-bg-visual" aria-hidden="true">
+        <div className="hero-bg-visual hero-bg-visual--desktop" aria-hidden="true">
           <Image
             src={siteConfig.heroImage}
+            alt=""
+            fill
+            className="hero-bg-image"
+            priority
+            sizes="100vw"
+          />
+        </div>
+      )}
+
+      {hasMobileBg && (
+        <div className="hero-bg-visual hero-bg-visual--mobile" aria-hidden="true">
+          <Image
+            src={siteConfig.heroMobileImage!}
             alt=""
             fill
             className="hero-bg-image"

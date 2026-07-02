@@ -32,9 +32,31 @@ const FeaturedWork = () => {
     container.addEventListener('scroll', updateScrollState, { passive: true })
     window.addEventListener('resize', updateScrollState)
 
+    let startX = 0
+    let startY = 0
+
+    const onTouchStart = (event: TouchEvent) => {
+      startX = event.touches[0].clientX
+      startY = event.touches[0].clientY
+    }
+
+    const onTouchMove = (event: TouchEvent) => {
+      const deltaX = Math.abs(event.touches[0].clientX - startX)
+      const deltaY = Math.abs(event.touches[0].clientY - startY)
+
+      if (deltaX > deltaY && deltaX > 4) {
+        event.preventDefault()
+      }
+    }
+
+    container.addEventListener('touchstart', onTouchStart, { passive: true })
+    container.addEventListener('touchmove', onTouchMove, { passive: false })
+
     return () => {
       container.removeEventListener('scroll', updateScrollState)
       window.removeEventListener('resize', updateScrollState)
+      container.removeEventListener('touchstart', onTouchStart)
+      container.removeEventListener('touchmove', onTouchMove)
     }
   }, [items, loading, updateScrollState])
 
