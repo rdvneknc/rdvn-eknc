@@ -51,17 +51,18 @@ const LocalizationPage = () => {
           <SectionLabel>Services</SectionLabel>
           <h1 className="section-title content-page-title">Localization</h1>
           <p className="content-page-description">
-            Bridging cultures through expert translation and localization services for games,
-            websites, and global marketing content.
+            Helping games, websites, apps, and digital products reach Turkish and English-speaking
+            audiences with clear, natural, and culturally adapted localization.
           </p>
         </motion.header>
 
         <section className="content-section">
           <div className="content-section-heading">
             <SectionLabel>What I Offer</SectionLabel>
-            <h2 className="section-title">Professional Services</h2>
+            <h2 className="section-title">Translation & Localization Services</h2>
             <p className="content-section-subtitle">
-              Comprehensive translation and localization solutions for global reach.
+              Professional English–Turkish and Turkish–English localization support for digital
+              products, games, websites, and marketing content.
             </p>
           </div>
 
@@ -99,7 +100,7 @@ const LocalizationPage = () => {
             <SectionLabel>Expertise</SectionLabel>
             <h2 className="section-title">Language Expertise</h2>
             <p className="content-section-subtitle">
-              Professional translation services across multiple language pairs.
+              Professional localization and translation services between Turkish and English.
             </p>
           </div>
 
@@ -130,7 +131,7 @@ const LocalizationPage = () => {
               viewport={{ once: true }}
               className="content-info-card"
             >
-              <h3 className="content-info-card-title">Specialized Domains</h3>
+              <h3 className="content-info-card-title">Specialized Areas</h3>
               <div className="content-domain-grid">
                 {localizationDomains.map((domain) => (
                   <div key={domain} className="content-domain-item">
@@ -148,7 +149,7 @@ const LocalizationPage = () => {
             <SectionLabel>Portfolio</SectionLabel>
             <h2 className="section-title">Localized Games</h2>
             <p className="content-section-subtitle">
-              Mobile games I&apos;ve localized for international markets.
+              Mobile games and game-related content I have localized for international audiences.
             </p>
           </div>
 
@@ -228,7 +229,8 @@ const LocalizationPage = () => {
             <SectionLabel>Case Studies</SectionLabel>
             <h2 className="section-title">Project Highlights</h2>
             <p className="content-section-subtitle">
-              Examples of successful localization and translation projects.
+              Examples of localization and translation projects across games, websites, and
+              specialized content.
             </p>
           </div>
 
@@ -281,7 +283,7 @@ const LocalizationPage = () => {
             <SectionLabel>My Process</SectionLabel>
             <h2 className="section-title">How I Work</h2>
             <p className="content-section-subtitle">
-              A systematic approach ensuring quality and cultural accuracy.
+              A structured localization process focused on accuracy, clarity, and cultural fit.
             </p>
           </div>
 

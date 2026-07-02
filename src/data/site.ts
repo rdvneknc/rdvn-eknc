@@ -174,63 +174,104 @@ export const heroHighlights = [
 
 export const localizationServices = [
   {
-    title: 'Document Translation',
+    title: 'Game Localization',
     description:
-      'Accurate translation of technical documents, marketing materials, and business communications.',
-    icon: 'file' as const,
-    features: ['Technical Documentation', 'Marketing Copy', 'Legal Documents', 'Academic Papers'],
-  },
-  {
-    title: 'Website Localization',
-    description:
-      'Complete website adaptation for different markets, including UI/UX considerations.',
-    icon: 'globe' as const,
-    features: ['UI Translation', 'Cultural Adaptation', 'SEO Localization', 'Content Strategy'],
-  },
-  {
-    title: 'Software Localization',
-    description:
-      'Application and software interface translation with technical implementation.',
+      'Localization of mobile games, in-game text, UI elements, app store listings, and player-facing content.',
     icon: 'languages' as const,
-    features: ['Interface Translation', 'Technical Integration', 'Quality Testing', 'User Experience'],
+    features: [
+      'In-game Text',
+      'UI Translation',
+      'App Store Listings',
+      'Game Descriptions',
+      'Terminology Consistency',
+    ],
+  },
+  {
+    title: 'Website & App Localization',
+    description:
+      'Adaptation of websites and applications for Turkish and English-speaking users, with attention to clarity, tone, and user experience.',
+    icon: 'globe' as const,
+    features: [
+      'Website Copy',
+      'UI/UX Text',
+      'Landing Pages',
+      'SEO-friendly Content',
+      'Cultural Adaptation',
+    ],
   },
   {
     title: 'Marketing Localization',
     description:
-      'Campaign adaptation for different cultural contexts and market preferences.',
+      'Localization of marketing content so your message feels natural, relevant, and persuasive for the target audience.',
     icon: 'target' as const,
-    features: ['Brand Messaging', 'Cultural Sensitivity', 'Market Research', 'Campaign Optimization'],
+    features: [
+      'Ad Copy',
+      'Social Media Text',
+      'Campaign Content',
+      'Brand Messaging',
+      'App Store Optimization Text',
+    ],
   },
   {
-    title: 'Quality Assurance',
+    title: 'Software & UI Localization',
     description:
-      'Comprehensive review and testing to ensure translation accuracy and cultural appropriateness.',
+      'Translation and adaptation of software interfaces, menus, buttons, onboarding flows, and user-facing product text.',
+    icon: 'file' as const,
+    features: [
+      'Interface Translation',
+      'Button & Menu Text',
+      'Onboarding Text',
+      'User Messages',
+      'Quality Review',
+    ],
+  },
+  {
+    title: 'Translation Review & QA',
+    description:
+      'Reviewing translated content for accuracy, consistency, readability, and cultural suitability.',
     icon: 'check' as const,
-    features: ['Proofreading', 'Cultural Review', 'Technical Validation', 'Client Feedback'],
+    features: [
+      'Proofreading',
+      'Terminology Review',
+      'Cultural Review',
+      'Context Check',
+      'Final Polish',
+    ],
   },
   {
-    title: 'Consultation',
+    title: 'Localization Consultation',
     description:
-      'Strategic guidance on localization best practices and global market entry.',
+      'Guidance on how to adapt your product, website, or marketing content for Turkish and English-speaking markets.',
     icon: 'award' as const,
-    features: ['Market Analysis', 'Strategy Planning', 'Best Practices', 'Implementation Support'],
+    features: [
+      'Localization Strategy',
+      'Tone of Voice',
+      'Content Adaptation',
+      'Market Fit Suggestions',
+      'Implementation Support',
+    ],
   },
 ]
 
 export const localizationLanguages = [
   { language: 'Turkish', level: 'Native', flag: '🇹🇷' },
-  { language: 'English', level: 'C1 (CEFR Level)', flag: '🇬🇧' },
+  {
+    language: 'English',
+    level: 'Professional Working Proficiency / C1 CEFR Level',
+    flag: '🇬🇧',
+  },
 ]
 
 export const localizationDomains = [
+  'Mobile Games',
+  'Websites',
+  'Apps & Software',
+  'Digital Marketing',
+  'E-commerce',
   'Technology',
   'Education',
-  'Business',
-  'Marketing',
-  'Healthcare',
-  'Finance',
-  'Legal',
-  'E-commerce',
+  'Academic Content',
+  'Business Communication',
 ]
 
 export const localizedGames = [
@@ -272,35 +313,44 @@ export const localizationProjects = [
     title: 'Mobile Game Localization',
     company: 'Limon Games',
     description:
-      'Localized and translated multiple mobile games, including in-game text, UI elements, and app store listings. Collaborated with the development team to ensure accurate text adaptation and handled communication with international clients.',
+      'Translated and localized multiple mobile games, including in-game text, UI elements, app store listings, website content, and marketing materials. Worked closely with the development team to maintain accuracy, consistency, and a natural user experience across English and Turkish.',
     languages: ['English → Turkish', 'Turkish → English'],
-    scope: 'Multiple mobile games, website content, app store listings',
-    results: 'Successful localization of multiple games for international markets',
+    scope:
+      'Mobile games, UI text, app store listings, website content, marketing copy',
+    results:
+      'Delivered consistent and user-friendly localization for multiple game-related products and promotional materials.',
   },
   {
     title: 'Website Localization & Content',
     company: 'Kopazar.com',
     description:
-      'Translated and localized website content for gaming and e-commerce platforms. Produced blog articles tailored for the target audience and participated in live meetings as an interpreter for international clients.',
+      'Translated and localized website content for gaming and e-commerce audiences. Produced blog articles, news content, support-related texts, and participated in live meetings as an interpreter for international business communication.',
     languages: ['English → Turkish', 'Turkish → English'],
-    scope: 'Website content, blog articles, live interpreting',
-    results: 'Improved international customer engagement and communication',
+    scope:
+      'Website content, blog articles, e-commerce content, business communication, live interpreting',
+    results:
+      'Supported clearer communication with international partners and helped adapt content for local users.',
   },
   {
     title: 'Medical & Academic Translation',
+    company: 'Freelance Projects',
     description:
-      'Provided English–Turkish translation services for medical professionals and academic researchers. Translated medical reports, research articles, theses, and legal contracts with focus on accuracy and context adaptation.',
+      'Provided English–Turkish and Turkish–English translation support for medical professionals, academic researchers, and individual clients. Translated medical reports, research articles, theses, and contract-related documents with attention to accuracy, terminology, and context.',
     languages: ['English → Turkish', 'Turkish → English'],
-    scope: 'Medical reports, research articles, theses, legal contracts',
-    results: 'High accuracy translations for specialized content',
+    scope:
+      'Medical reports, research articles, theses, academic texts, contract-related documents',
+    results:
+      'Delivered accurate and context-aware translations for specialized documents.',
   },
   {
     title: 'Game & Technology Translation',
+    company: 'Freelance & Professional Projects',
     description:
-      'Translated game-related and technology content with specialized terminology management. Focused on accurate translation of technical documentation and game narratives while maintaining cultural context.',
+      'Translated game-related, software-related, and technology-focused content with attention to terminology, clarity, and cultural context. Focused on keeping technical content accurate while making the final text natural for the target audience.',
     languages: ['English → Turkish', 'Turkish → English'],
-    scope: 'Game content, technical documentation, technology articles',
-    results: 'Accurate localization maintaining technical accuracy',
+    scope: 'Game content, software text, technical documentation, technology articles',
+    results:
+      'Maintained technical accuracy while adapting content into clear and natural Turkish or English.',
   },
 ]
 
@@ -308,80 +358,117 @@ export const localizationProcess = [
   {
     title: 'Project Analysis',
     description:
-      'Understanding your goals, target audience, and cultural context to develop the best localization strategy.',
+      'I review your content, goals, target audience, tone of voice, and platform requirements before starting the localization process.',
     icon: 'file' as const,
   },
   {
     title: 'Translation & Adaptation',
     description:
-      'Expert translation with cultural adaptation, ensuring your message resonates with local audiences.',
+      'I translate and adapt the content so it sounds natural, clear, and appropriate for the target market.',
     icon: 'languages' as const,
   },
   {
-    title: 'Quality Assurance',
+    title: 'Quality Review',
     description:
-      'Comprehensive review process including proofreading, cultural validation, and technical accuracy checks.',
+      'I review the final text for accuracy, terminology consistency, readability, and cultural suitability.',
     icon: 'check' as const,
   },
   {
     title: 'Delivery & Support',
     description:
-      'Timely delivery of final materials with ongoing support for any questions or revisions needed.',
+      'I deliver the final materials in the required format and provide support for revisions, updates, or implementation questions.',
     icon: 'send' as const,
   },
 ]
 
 export const aboutBio = [
-  'My professional journey began in English language education at Middle East Technical University, where I developed a strong foundation in language teaching and cross-cultural communication. This background provided me with deep insights into how people learn, communicate, and connect across different cultures.',
-  "Over the years, I expanded my expertise into translation and localization, working with companies like Limon Games and Kopazar.com. I've specialized in game localization, website translation, and providing bilingual customer support for both local and international clients.",
-  'Recently, I completed a Full Stack Developer Bootcamp and started freelancing as a developer, building custom web applications, QR menu systems, and admin dashboards. I also leverage AI-driven workflow optimization to enhance productivity and deliver exceptional results.',
-  'Today, I combine my language expertise, technical skills, and customer experience background to help organizations reach global audiences while maintaining the human touch that makes communication meaningful.',
+  'My professional journey started with language, communication, and cultural understanding. I studied English Language Teaching at Middle East Technical University, where I built a strong foundation in English, education, and cross-cultural communication.',
+  'Over the years, I turned this background into professional translation and localization experience, working with gaming, e-commerce, technology, academic, and business-related content. I worked with companies such as Limon Games and Kopazar.com, where I translated and localized mobile games, websites, app store listings, support content, and marketing materials.',
+  'My experience in the game industry helped me understand how players interact with games, how game content should feel natural in different languages, and how small wording choices can affect user experience, clarity, and trust.',
+  'In recent years, I also expanded into web development, creative production, and AI-assisted workflows. I completed a Full Stack Developer Bootcamp and worked on web applications, admin dashboards, QR menu systems, and small creative game-related projects. This technical background helps me better understand digital products, UI text, user flows, and the production needs of modern game and app teams.',
+  'Today, I bring together localization, game marketing, creative visuals, content production, and technical understanding to help mobile games and digital products communicate better with their target audiences.',
 ]
 
 export const aboutExperience = [
   {
     title: 'Customer Experience & Localization Specialist',
     company: 'Kopazar.com',
-    period: 'Sep 2024 - Present',
+    period: 'Sep 2024 – Present',
     description:
-      'Manage customer communication processes and provide bilingual support for both local and international clients. Attend meetings with foreign partners as an interpreter and assist in establishing business collaborations. Contribute to website translation and localization when needed.',
-    skills: ['Bilingual Support', 'Customer Communication', 'Interpreting', 'Website Localization', 'Business Collaboration'],
+      'Manage customer communication processes and provide bilingual support for local and international clients. Support communication with foreign partners, participate in meetings as an interpreter, and contribute to website translation, content adaptation, and localization when needed.',
+    skills: [
+      'Bilingual Support',
+      'Customer Communication',
+      'Interpreting',
+      'Website Localization',
+      'Business Communication',
+      'Content Adaptation',
+    ],
     icon: 'users' as const,
   },
   {
-    title: 'Freelance Developer',
+    title: 'Creative Web & Digital Projects',
     company: 'Self-employed',
-    period: 'Jun 2024 - Present',
+    period: 'Jun 2024 – Present',
     description:
-      'Develop custom web applications, QR menu systems, and admin dashboards for individual clients using JavaScript and React. Also build small indie games as creative side projects focused on design and user experience.',
-    skills: ['React', 'JavaScript', 'Web Applications', 'QR Menu Systems', 'Admin Dashboards', 'Game Development'],
+      'Build small web applications, QR menu systems, admin dashboards, and creative digital projects using JavaScript and React. Also work on AI-assisted visual and content workflows, especially for mobile game ads, promotional content, and creative testing.',
+    skills: [
+      'React',
+      'JavaScript',
+      'Web Applications',
+      'Admin Dashboards',
+      'Creative Workflows',
+      'AI-assisted Production',
+      'Game-related Projects',
+    ],
     icon: 'code' as const,
   },
   {
     title: 'Freelance Translator',
     company: 'Self-employed',
-    period: 'Apr 2012 - June 2023',
+    period: 'Apr 2012 – Jun 2023',
     description:
-      'Provided English–Turkish translation services for a wide range of clients, including medical professionals and academic researchers. Translated medical reports, research articles, theses, legal contracts, and game or technology-related content with focus on accuracy and context adaptation.',
-    skills: ['Medical Translation', 'Academic Translation', 'Legal Translation', 'Game Translation', 'Technical Documentation'],
+      'Provided English–Turkish and Turkish–English translation services for individual clients and professionals. Worked on academic texts, medical reports, theses, contract-related documents, technology content, and game-related materials with a focus on accuracy, clarity, and context.',
+    skills: [
+      'English–Turkish Translation',
+      'Turkish–English Translation',
+      'Academic Translation',
+      'Medical Reports',
+      'Technology Content',
+      'Game Translation',
+    ],
     icon: 'globe' as const,
   },
   {
     title: 'Localization Specialist',
     company: 'Limon Games',
-    period: 'Jan 2016 - Oct 2021',
+    period: 'Jan 2016 – Oct 2021',
     description:
-      'Localized and translated mobile games, website content, and app store listings. Collaborated with the development team to ensure accurate in-game text adaptation and handled communication with international clients.',
-    skills: ['Game Localization', 'Mobile Games', 'Website Translation', 'App Store Localization', 'International Communication'],
+      'Translated and localized mobile games, website content, in-game text, app store listings, and marketing-related materials. Worked closely with the development team to ensure accurate text adaptation and supported communication with international clients and partners.',
+    skills: [
+      'Game Localization',
+      'Mobile Games',
+      'In-game Text',
+      'Website Translation',
+      'App Store Localization',
+      'International Communication',
+    ],
     icon: 'globe' as const,
   },
   {
     title: 'Translator & Content Specialist',
     company: 'Kopazar.com',
-    period: 'Oct 2011 - Nov 2015',
+    period: 'Oct 2011 – Nov 2015',
     description:
-      'Assisted international customers through bilingual communication in English and Turkish. Translated and localized website content, participated in live meetings as an interpreter, and produced blog articles tailored for the gaming and e-commerce audience.',
-    skills: ['Bilingual Communication', 'Website Localization', 'Interpreting', 'Content Creation', 'Blog Writing'],
+      'Supported international customers through bilingual communication in English and Turkish. Translated and localized website content, participated in live meetings as an interpreter, and created blog and news content for gaming and e-commerce audiences.',
+    skills: [
+      'Bilingual Communication',
+      'Website Localization',
+      'Interpreting',
+      'Content Creation',
+      'Blog Writing',
+      'Gaming & E-commerce Content',
+    ],
     icon: 'book' as const,
   },
 ]
@@ -390,25 +477,31 @@ export const aboutValues = [
   {
     title: 'Clear Communication',
     description:
-      'I believe that effective communication is the foundation of all successful projects. I strive to make complex ideas accessible and ensure everyone is on the same page.',
+      'I believe strong communication is the foundation of every successful project. Whether I am localizing a game, adapting marketing content, or working on a creative asset, I focus on making the message clear, natural, and easy to understand.',
     icon: 'message' as const,
   },
   {
-    title: 'Quality Excellence',
+    title: 'Cultural Awareness',
     description:
-      "Every project receives my full attention to detail. I'm committed to delivering work that not only meets but exceeds expectations.",
-    icon: 'award' as const,
+      'Good localization is not just about translating words. It is about understanding the target audience, cultural expectations, tone, and context. I aim to make content feel natural for the people who will actually read, watch, or interact with it.',
+    icon: 'users' as const,
   },
   {
-    title: 'Cultural Sensitivity',
+    title: 'Creative Practicality',
     description:
-      'Understanding and respecting cultural differences is crucial in our globalized world. I bring this awareness to every project I work on.',
-    icon: 'users' as const,
+      'I like creative ideas that are also usable. My goal is to create content and visuals that look good, communicate clearly, and can realistically work in ads, app stores, websites, or digital campaigns.',
+    icon: 'code' as const,
+  },
+  {
+    title: 'Attention to Detail',
+    description:
+      'Small details matter in localization, UI text, ads, and user-facing content. I pay attention to wording, consistency, tone, and visual presentation so the final result feels polished and professional.',
+    icon: 'award' as const,
   },
   {
     title: 'Continuous Learning',
     description:
-      'Technology and language evolve rapidly. I stay current with the latest trends and continuously improve my skills to serve clients better.',
-    icon: 'code' as const,
+      'Games, marketing, technology, and AI tools are constantly evolving. I actively follow new tools, workflows, and creative approaches to improve the quality and efficiency of my work.',
+    icon: 'book' as const,
   },
 ]

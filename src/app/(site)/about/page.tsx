@@ -19,6 +19,7 @@ const valueIconMap = {
   award: Award,
   users: Users,
   code: Code,
+  book: BookOpen,
 }
 
 const AboutPage = () => {
@@ -34,9 +35,9 @@ const AboutPage = () => {
           <SectionLabel>About</SectionLabel>
           <h1 className="section-title content-page-title">About Ridvan</h1>
           <p className="content-page-description">
-            Bilingual localization and customer experience specialist with a full-stack development
-            background — combining language expertise, technical skills, and AI-driven workflow
-            optimization.
+            I help game and digital product teams create localized, clear, and engaging content for
+            global audiences — combining localization experience, game industry background, creative
+            production, and technical understanding.
           </p>
         </motion.header>
 
@@ -51,7 +52,7 @@ const AboutPage = () => {
             >
               <div className="content-section-heading">
                 <SectionLabel>My Journey</SectionLabel>
-                <h2 className="section-title">From Language to Creative Tech</h2>
+                <h2 className="section-title">From Language to Game Marketing & Creative Tech</h2>
               </div>
               {aboutBio.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
@@ -75,7 +76,8 @@ const AboutPage = () => {
             <SectionLabel>Experience</SectionLabel>
             <h2 className="section-title">Professional Experience</h2>
             <p className="content-section-subtitle">
-              A diverse background spanning education, technology, and communication.
+              A background combining localization, gaming, customer communication, content
+              production, and technical skills.
             </p>
           </div>
 
@@ -124,7 +126,7 @@ const AboutPage = () => {
             <SectionLabel>Values</SectionLabel>
             <h2 className="section-title">My Values</h2>
             <p className="content-section-subtitle">
-              The principles that guide my work and relationships.
+              The principles that guide how I work with clients, teams, and creative projects.
             </p>
           </div>
 
