@@ -6,6 +6,7 @@ import {
   type PortfolioInput,
 } from '@/lib/portfolio'
 import type { PortfolioCategory, VideoAspectRatio } from '@/data/site'
+import { isPromoVisualItem } from '@/data/site'
 
 const VALID_ASPECT_RATIOS: VideoAspectRatio[] = ['16:9', '9:16', '1:1', '4:5']
 
@@ -32,19 +33,26 @@ export async function POST(request: Request) {
     await requireAdminSession()
     const body = await request.json()
 
+    const category = body.category as PortfolioCategory
+    const isPromo = isPromoVisualItem({ category })
+
     const input: PortfolioInput = {
       title: String(body.title || ''),
       subtitle: String(body.subtitle || ''),
       youtubeUrl: String(body.youtubeUrl || ''),
       thumbnail: body.thumbnail ? String(body.thumbnail) : null,
-      category: body.category as PortfolioCategory,
+      category,
       duration: String(body.duration || '—'),
       resolution: String(body.resolution || 'HD'),
       featured: Boolean(body.featured),
       aspectRatio: parseAspectRatio(body.aspectRatio),
     }
 
-    if (!input.title || !input.youtubeUrl) {
+    if (isPromo) {
+      if (!input.thumbnail) {
+        return NextResponse.json({ error: 'Image is required for promo visuals' }, { status: 400 })
+      }
+    } else if (!input.title || !input.youtubeUrl) {
       return NextResponse.json({ error: 'Title and YouTube URL are required' }, { status: 400 })
     }
 
@@ -56,6 +64,9 @@ export async function POST(request: Request) {
     }
     if (error instanceof Error && error.message === 'INVALID_YOUTUBE_URL') {
       return NextResponse.json({ error: 'Invalid YouTube URL' }, { status: 400 })
+    }
+    if (error instanceof Error && error.message === 'THUMBNAIL_REQUIRED') {
+      return NextResponse.json({ error: 'Image is required for promo visuals' }, { status: 400 })
     }
     if (error instanceof Error && error.message === 'FEATURED_LIMIT_REACHED') {
       return NextResponse.json(

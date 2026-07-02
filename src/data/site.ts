@@ -38,6 +38,29 @@ export interface PortfolioItem {
   resolution: string
   featured: boolean
   aspectRatio: VideoAspectRatio
+  displayOrder?: number
+  createdAt?: string
+}
+
+export function chunkPortfolioItems<T>(items: T[], size: number): T[][] {
+  const chunks: T[][] = []
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size))
+  }
+  return chunks
+}
+
+export function comparePortfolioDisplayOrder(
+  a: Pick<PortfolioItem, 'id' | 'displayOrder'>,
+  b: Pick<PortfolioItem, 'id' | 'displayOrder'>
+) {
+  return (a.displayOrder ?? 0) - (b.displayOrder ?? 0) || a.id.localeCompare(b.id)
+}
+
+export function sortPortfolioByDisplayOrder<T extends Pick<PortfolioItem, 'id' | 'displayOrder'>>(
+  items: T[]
+) {
+  return [...items].sort(comparePortfolioDisplayOrder)
 }
 
 export const portfolioFilters = [
@@ -50,7 +73,7 @@ export const portfolioFilters = [
 
 export type PortfolioFilterId = (typeof portfolioFilters)[number]['id']
 
-export const PORTFOLIO_PAGE_SIZE = 6
+export const PORTFOLIO_PAGE_SIZE = 10
 export const MAX_FEATURED_VIDEOS = 10
 
 export const categoryToBadge: Record<PortfolioCategory, PortfolioBadge> = {
@@ -59,6 +82,20 @@ export const categoryToBadge: Record<PortfolioCategory, PortfolioBadge> = {
   'ugc-ai-ads': 'UGC',
   'promo-visuals': 'Promo Visual',
 }
+
+export function isPromoVisualItem(item: Pick<PortfolioItem, 'category'>) {
+  return item.category === 'promo-visuals'
+}
+
+export function isLandscapePromoItem(item: Pick<PortfolioItem, 'category' | 'aspectRatio'>) {
+  return isPromoVisualItem(item) && (item.aspectRatio ?? '16:9') === '16:9'
+}
+
+export function isGridPromoItem(item: Pick<PortfolioItem, 'category' | 'aspectRatio'>) {
+  return isPromoVisualItem(item) && (item.aspectRatio ?? '16:9') !== '16:9'
+}
+
+export const videoCategories = portfolioFilters.filter((filter) => filter.id !== 'all' && filter.id !== 'promo-visuals')
 
 export const services = [
   {

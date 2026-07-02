@@ -259,11 +259,111 @@
     background: linear-gradient(180deg, #081222 0%, #060d18 100%);
   }
 
+  .work-thumb--16-9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  .work-thumb--9-16 {
+    aspect-ratio: 9 / 16;
+  }
+
+  .work-thumb--1-1 {
+    aspect-ratio: 1 / 1;
+  }
+
+  .work-thumb--4-5 {
+    aspect-ratio: 4 / 5;
+  }
+
+  .work-card--promo {
+    height: auto;
+  }
+
+  .work-card--promo-stacked {
+    flex: 1 1 50%;
+    min-height: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-card--promo-stacked:hover {
+    transform: none;
+  }
+
+  .work-card--promo-stacked .work-thumb--promo-fill {
+    flex: 1;
+    margin: 6px 8px;
+    width: calc(100% - 16px);
+    aspect-ratio: unset;
+    min-height: 0;
+  }
+
+  .work-thumb--promo-contain {
+    background: linear-gradient(180deg, #0a1424 0%, #060d18 100%);
+  }
+
+  .work-card--promo-full {
+    height: 100%;
+    min-height: calc(100cqw - 20px + var(--portfolio-card-body, 134px));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-card--promo-full .work-thumb--promo-full {
+    flex: 1;
+    margin: 10px;
+    width: calc(100% - 20px);
+    aspect-ratio: unset;
+    min-height: 0;
+  }
+
+  .work-thumb-image--contain {
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  .work-card:hover .work-thumb-image--contain {
+    transform: scale(1.02);
+  }
+
+  .work-card--promo .work-thumb {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .work-card--promo .work-thumb-overlay--promo {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .work-card--promo:hover .work-thumb-overlay--promo {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
   .work-thumb-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.18);
     transition: background 0.25s ease;
+    z-index: 1;
+  }
+
+  .work-thumb-badge {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 3;
+    margin-top: 0;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .work-card--promo-stacked .work-thumb-badge {
+    right: 6px;
+    bottom: 6px;
+    padding: 3px 7px;
+    font-size: 9px;
   }
 
   .work-card:hover .work-thumb-overlay {
@@ -276,6 +376,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
   }
 
   .play-circle {
@@ -317,7 +418,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    min-height: 92px;
+    min-height: 108px;
     padding: 12px 14px 14px;
   }
 
@@ -428,6 +529,16 @@
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  .image-modal-frame {
+    background: #060d18;
+  }
+
+  .image-modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   .work-thumb-placeholder {
@@ -548,11 +659,34 @@
     gap: 18px;
     margin-bottom: 40px;
     align-items: stretch;
+    --portfolio-card-body: 134px;
   }
 
   .portfolio-grid-item {
     height: 100%;
     display: flex;
+    container-type: inline-size;
+  }
+
+  .portfolio-promo-pair {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    min-height: calc(100cqw - 20px + var(--portfolio-card-body, 134px));
+    height: 100%;
+  }
+
+  .portfolio-promo-pair--single > :first-child {
+    grid-row: 1;
+  }
+
+  .portfolio-grid--promo-others {
+    margin-top: 18px;
+  }
+
+  .work-card-subtitle--placeholder,
+  .work-card-title--placeholder {
+    visibility: hidden;
   }
 
   .portfolio-grid-card {
@@ -652,7 +786,6 @@
     font-weight: 700;
     line-height: 1;
     white-space: nowrap;
-    margin-top: 2px;
   }
 
   .portfolio-grid-badge-ai-trailer {
@@ -2283,6 +2416,18 @@
   margin-bottom: 24px;
 }
 
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.admin-muted {
+  color: #6f7a96;
+  font-size: 13px;
+}
+
 .admin-page-title {
   font-size: 28px;
   font-weight: 800;
@@ -2476,6 +2621,44 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #8b93ad;
+}
+
+.admin-table-col-drag {
+  width: 40px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.admin-drag-handle {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #6f7a96;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.admin-drag-handle:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.admin-drag-handle:active {
+  cursor: grabbing;
+}
+
+.admin-table-row--dragging {
+  opacity: 0.45;
+}
+
+.admin-table-row--over td {
+  background: rgba(155, 92, 255, 0.08);
+  box-shadow: inset 0 2px 0 #9b5cff;
 }
 
 .admin-video-cell {

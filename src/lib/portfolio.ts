@@ -1,7 +1,9 @@
 import { randomUUID } from 'crypto'
 import {
   categoryToBadge,
+  isPromoVisualItem,
   MAX_FEATURED_VIDEOS,
+  sortPortfolioByDisplayOrder,
   type PortfolioCategory,
   type PortfolioItem,
   type VideoAspectRatio,
@@ -26,6 +28,8 @@ export function toPublicPortfolioItem(item: StoredPortfolioItem): PortfolioItem 
     resolution: item.resolution,
     featured: item.featured,
     aspectRatio: item.aspectRatio ?? '16:9',
+    displayOrder: item.displayOrder,
+    createdAt: item.createdAt,
   }
 }
 
@@ -37,13 +41,11 @@ export async function listPortfolioItems(options?: {
 
   if (options?.featured) {
     filtered = items
-      .filter((item) => item.featured)
+      .filter((item) => item.featured && !isPromoVisualItem(item))
       .sort((a, b) => a.displayOrder - b.displayOrder)
       .slice(0, MAX_FEATURED_VIDEOS)
   } else {
-    filtered = [...items].sort(
-      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    )
+    filtered = sortPortfolioByDisplayOrder(items)
   }
 
   return filtered.map(toPublicPortfolioItem)
@@ -66,34 +68,43 @@ function countFeatured(items: StoredPortfolioItem[], excludeId?: string) {
 }
 
 export async function createPortfolioItem(input: PortfolioInput): Promise<PortfolioItem> {
-  const videoId = extractYouTubeId(input.youtubeUrl)
-  if (!videoId) {
-    throw new Error('INVALID_YOUTUBE_URL')
+  const isPromo = isPromoVisualItem({ category: input.category })
+
+  if (isPromo) {
+    if (!input.thumbnail) {
+      throw new Error('THUMBNAIL_REQUIRED')
+    }
+  } else {
+    const videoId = extractYouTubeId(input.youtubeUrl)
+    if (!videoId) {
+      throw new Error('INVALID_YOUTUBE_URL')
+    }
   }
 
   const items = await getPortfolioItems()
   const featuredCount = countFeatured(items)
+  const featured = isPromo ? false : input.featured
 
-  if (input.featured && featuredCount >= MAX_FEATURED_VIDEOS) {
+  if (featured && featuredCount >= MAX_FEATURED_VIDEOS) {
     throw new Error('FEATURED_LIMIT_REACHED')
   }
 
   const now = new Date().toISOString()
-  const nextOrder = input.featured
-    ? Math.max(-1, ...items.filter((item) => item.featured).map((item) => item.displayOrder)) + 1
-    : 0
+  const nextOrder = Math.max(-1, ...items.map((item) => item.displayOrder)) + 1
+
+  const videoId = isPromo ? '' : extractYouTubeId(input.youtubeUrl)!
 
   const item: StoredPortfolioItem = {
     id: randomUUID(),
-    title: input.title.trim(),
-    subtitle: input.subtitle.trim(),
+    title: isPromo ? '' : input.title.trim(),
+    subtitle: isPromo ? '' : input.subtitle.trim(),
     videoId,
     thumbnail: input.thumbnail ?? null,
     category: input.category,
     badge: categoryToBadge[input.category],
-    duration: input.duration.trim() || '—',
-    resolution: input.resolution.trim() || 'HD',
-    featured: input.featured,
+    duration: isPromo ? '—' : input.duration.trim() || '—',
+    resolution: isPromo ? '—' : input.resolution.trim() || 'HD',
+    featured,
     aspectRatio: input.aspectRatio,
     displayOrder: nextOrder,
     createdAt: now,
@@ -117,39 +128,47 @@ export async function updatePortfolioItem(
   }
 
   const current = items[index]
+  const category = input.category ?? current.category
+  const isPromo = isPromoVisualItem({ category })
   const featuredCount = countFeatured(items, id)
 
-  if (input.featured === true && !current.featured && featuredCount >= MAX_FEATURED_VIDEOS) {
+  const nextFeatured = isPromo ? false : (input.featured ?? current.featured)
+
+  if (nextFeatured === true && !current.featured && featuredCount >= MAX_FEATURED_VIDEOS) {
     throw new Error('FEATURED_LIMIT_REACHED')
   }
 
   let videoId = current.videoId
-  if (input.youtubeUrl) {
+  if (!isPromo && input.youtubeUrl) {
     const parsed = extractYouTubeId(input.youtubeUrl)
     if (!parsed) throw new Error('INVALID_YOUTUBE_URL')
     videoId = parsed
+  } else if (isPromo) {
+    videoId = ''
   }
 
-  const category = input.category ?? current.category
-  const featured = input.featured ?? current.featured
+  if (isPromo && input.thumbnail === null) {
+    throw new Error('THUMBNAIL_REQUIRED')
+  }
 
   const updated: StoredPortfolioItem = {
     ...current,
-    title: input.title?.trim() ?? current.title,
-    subtitle: input.subtitle?.trim() ?? current.subtitle,
+    title: isPromo ? '' : (input.title?.trim() ?? current.title),
+    subtitle: isPromo ? '' : (input.subtitle?.trim() ?? current.subtitle),
     videoId,
     thumbnail: input.thumbnail !== undefined ? input.thumbnail : current.thumbnail,
     category,
     badge: categoryToBadge[category],
-    duration: input.duration?.trim() ?? current.duration,
-    resolution: input.resolution?.trim() ?? current.resolution,
-    featured,
+    duration: isPromo ? '—' : (input.duration?.trim() ?? current.duration),
+    resolution: isPromo ? '—' : (input.resolution?.trim() ?? current.resolution),
+    featured: nextFeatured,
     aspectRatio: input.aspectRatio ?? current.aspectRatio ?? '16:9',
-    displayOrder:
-      featured && !current.featured
-        ? Math.max(-1, ...items.filter((item) => item.featured).map((item) => item.displayOrder)) + 1
-        : current.displayOrder,
+    displayOrder: current.displayOrder,
     updatedAt: new Date().toISOString(),
+  }
+
+  if (isPromo && !updated.thumbnail) {
+    throw new Error('THUMBNAIL_REQUIRED')
   }
 
   items[index] = updated
@@ -166,4 +185,27 @@ export async function deletePortfolioItem(id: string): Promise<void> {
   }
 
   await savePortfolioItems(next)
+}
+
+export async function reorderPortfolioItems(orderedIds: string[]): Promise<PortfolioItem[]> {
+  const items = await getPortfolioItems()
+
+  if (orderedIds.length !== items.length) {
+    throw new Error('INVALID_ORDER')
+  }
+
+  const itemMap = new Map(items.map((item) => [item.id, item]))
+  if (orderedIds.some((id) => !itemMap.has(id))) {
+    throw new Error('INVALID_ORDER')
+  }
+
+  const now = new Date().toISOString()
+  const reordered = orderedIds.map((id, index) => ({
+    ...itemMap.get(id)!,
+    displayOrder: index,
+    updatedAt: now,
+  }))
+
+  await savePortfolioItems(reordered)
+  return reordered.map(toPublicPortfolioItem)
 }

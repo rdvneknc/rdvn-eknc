@@ -1,34 +1,53 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import SectionLabel from '@/components/SectionLabel'
 import PortfolioGridCard from '@/components/PortfolioGridCard'
+import PortfolioPromoPair from '@/components/PortfolioPromoPair'
 import CtaBanner from '@/components/home/CtaBanner'
 import {
+  isPromoVisualItem,
   PORTFOLIO_PAGE_SIZE,
   portfolioFilters,
+  sortPortfolioByDisplayOrder,
   type PortfolioFilterId,
 } from '@/data/site'
 import { usePortfolio } from '@/hooks/usePortfolio'
+import {
+  buildPortfolioGridUnits,
+  getPortfolioCardVariant,
+  type PortfolioGridUnit,
+} from '@/lib/portfolio-grid'
 
 const AdCreativesPage = () => {
   const [activeFilter, setActiveFilter] = useState<PortfolioFilterId>('all')
   const [currentPage, setCurrentPage] = useState(1)
   const { items: portfolioItems, loading } = usePortfolio()
 
-  const filteredItems = useMemo(() => {
-    if (activeFilter === 'all') return portfolioItems
-    return portfolioItems.filter((item) => item.category === activeFilter)
+  const gridUnits = useMemo((): PortfolioGridUnit[] => {
+    if (activeFilter === 'all') {
+      return buildPortfolioGridUnits(portfolioItems)
+    }
+
+    if (activeFilter === 'promo-visuals') {
+      return buildPortfolioGridUnits(portfolioItems.filter((item) => isPromoVisualItem(item)))
+    }
+
+    return sortPortfolioByDisplayOrder(
+      portfolioItems.filter(
+        (item) => !isPromoVisualItem(item) && item.category === activeFilter
+      )
+    ).map((item) => ({ kind: 'card' as const, item, key: item.id }))
   }, [activeFilter, portfolioItems])
 
-  const totalPages = Math.max(1, Math.ceil(filteredItems.length / PORTFOLIO_PAGE_SIZE))
+  const totalPages = Math.max(1, Math.ceil(gridUnits.length / PORTFOLIO_PAGE_SIZE))
 
-  const paginatedItems = useMemo(() => {
+  const paginatedUnits = useMemo(() => {
     const start = (currentPage - 1) * PORTFOLIO_PAGE_SIZE
-    return filteredItems.slice(start, start + PORTFOLIO_PAGE_SIZE)
-  }, [filteredItems, currentPage])
+    return gridUnits.slice(start, start + PORTFOLIO_PAGE_SIZE)
+  }, [currentPage, gridUnits])
 
   const handleFilterChange = (filterId: PortfolioFilterId) => {
     setActiveFilter(filterId)
@@ -37,6 +56,33 @@ const AdCreativesPage = () => {
 
   const goToPage = (page: number) => {
     setCurrentPage(Math.min(Math.max(1, page), totalPages))
+  }
+
+  const renderMotionItem = (
+    key: string,
+    index: number,
+    children: ReactNode,
+    className = 'portfolio-grid-item'
+  ) => (
+    <motion.div
+      key={key}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+
+  const renderGridUnit = (unit: PortfolioGridUnit) => {
+    if (unit.kind === 'landscape-pair') {
+      return <PortfolioPromoPair items={unit.items} />
+    }
+
+    return (
+      <PortfolioGridCard item={unit.item} variant={getPortfolioCardVariant(unit.item)} />
+    )
   }
 
   return (
@@ -73,21 +119,15 @@ const AdCreativesPage = () => {
           ))}
         </div>
 
-        <div className="portfolio-grid">
-          {loading && <p className="portfolio-page-description">Loading videos...</p>}
-          {!loading &&
-            paginatedItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="portfolio-grid-item"
-              >
-                <PortfolioGridCard item={item} />
-              </motion.div>
-            ))}
-        </div>
+        {loading && <p className="portfolio-page-description">Loading videos...</p>}
+
+        {!loading && (
+          <div className="portfolio-grid">
+            {paginatedUnits.map((unit, index) =>
+              renderMotionItem(unit.key, index, renderGridUnit(unit))
+            )}
+          </div>
+        )}
 
         {totalPages > 1 && (
           <nav className="portfolio-pagination" aria-label="Portfolio pagination">

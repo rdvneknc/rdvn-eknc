@@ -46,6 +46,9 @@ export async function PUT(request: Request, context: RouteContext) {
     if (error instanceof Error && error.message === 'INVALID_YOUTUBE_URL') {
       return NextResponse.json({ error: 'Invalid YouTube URL' }, { status: 400 })
     }
+    if (error instanceof Error && error.message === 'THUMBNAIL_REQUIRED') {
+      return NextResponse.json({ error: 'Image is required for promo visuals' }, { status: 400 })
+    }
     if (error instanceof Error && error.message === 'FEATURED_LIMIT_REACHED') {
       return NextResponse.json(
         { error: 'You can feature up to 10 videos on the homepage' },
