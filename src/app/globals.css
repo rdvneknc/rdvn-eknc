@@ -135,15 +135,11 @@
     display: flex;
     gap: 18px;
     overflow-x: auto;
-    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 4px 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    touch-action: pan-x;
-    overscroll-behavior-x: contain;
-    overscroll-behavior-y: none;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -154,14 +150,6 @@
   .featured-scroll-item {
     flex: 0 0 min(224px, 72vw);
     scroll-snap-align: start;
-    touch-action: pan-x;
-  }
-
-  .featured-scroll .work-card {
-    touch-action: pan-x;
-    -webkit-user-drag: none;
-    user-select: none;
-    -webkit-touch-callout: none;
   }
 
   .featured-scroll-empty {
@@ -474,7 +462,7 @@
   .video-modal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 200;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1921,6 +1909,9 @@
     left: 0;
     right: 0;
     z-index: 100;
+  }
+
+  .navbar-surface {
     height: var(--site-nav-height);
     background: rgba(5, 8, 20, 0.92);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1961,6 +1952,8 @@
     color: #fff;
     cursor: pointer;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
     transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
 
@@ -1972,7 +1965,7 @@
   .mobile-nav-panel {
     position: fixed;
     inset: 0;
-    z-index: 90;
+    z-index: 99;
     pointer-events: none;
     visibility: hidden;
   }
@@ -2100,13 +2093,35 @@
       --site-nav-height: 68px;
     }
 
-    .navbar-inner {
-      padding: 0 16px;
-    }
-
     .site-brand-logo {
       height: 44px;
       max-width: min(210px, 58vw);
+    }
+
+    .mobile-nav-sheet {
+      padding-left: max(20px, env(safe-area-inset-left, 0px));
+      padding-right: max(20px, env(safe-area-inset-right, 0px));
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .navbar-desktop {
+      gap: 18px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+    }
+
+    .site-brand-logo {
+      height: 56px;
+      max-width: min(240px, 34vw);
+    }
+
+    .btn-outline {
+      height: 40px;
+      padding: 0 14px;
+      font-size: 13px;
     }
   }
 
@@ -2437,6 +2452,16 @@
 
     .content-process-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .page-container {
+      padding: 0 16px;
+    }
+
+    .navbar-inner {
+      padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px));
     }
   }
 }

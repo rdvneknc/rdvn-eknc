@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import type { VideoAspectRatio } from '@/data/site'
 
@@ -31,20 +32,13 @@ const VideoModal = ({ videoId, title, aspectRatio = '16:9', onClose }: VideoModa
     }
   }, [onClose])
 
-  return (
-    <div
-      className="video-modal-overlay"
-      onClick={onClose}
-    >
+  return createPortal(
+    <div className="video-modal-overlay" onClick={onClose}>
       <div
         className={`video-modal-frame ${aspectRatioClassMap[aspectRatio]}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="video-modal-close"
-          aria-label="Close video"
-        >
+        <button onClick={onClose} className="video-modal-close" aria-label="Close video">
           <X size={20} />
         </button>
         <iframe
@@ -55,7 +49,8 @@ const VideoModal = ({ videoId, title, aspectRatio = '16:9', onClose }: VideoModa
           className="video-modal-iframe"
         />
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 

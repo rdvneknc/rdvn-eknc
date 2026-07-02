@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import type { VideoAspectRatio } from '@/data/site'
@@ -32,7 +33,7 @@ const ImageModal = ({ src, alt, aspectRatio = '1:1', onClose }: ImageModalProps)
     }
   }, [onClose])
 
-  return (
+  return createPortal(
     <div className="video-modal-overlay" onClick={onClose}>
       <div
         className={`video-modal-frame image-modal-frame ${aspectRatioClassMap[aspectRatio]}`}
@@ -45,7 +46,8 @@ const ImageModal = ({ src, alt, aspectRatio = '1:1', onClose }: ImageModalProps)
           <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" priority />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 
