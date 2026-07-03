@@ -13,7 +13,23 @@
     "aspectRatio": "9:16",
     "displayOrder": 0,
     "createdAt": "2026-07-01T12:48:57.623Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
+  },
+  {
+    "id": "1767456e-121a-451e-8fa4-9273bd1f73eb",
+    "title": "Soccer All Stars",
+    "subtitle": "16:9 advertisement video for Soccer All Stars mobile game",
+    "videoId": "Kw15OjEe4e0",
+    "thumbnail": "/uploads/thumbnails/c2fd6dad-d81e-4313-a58d-7ef962034fd3.jpg",
+    "category": "ai-gameplay",
+    "badge": "AI + Gameplay",
+    "duration": "0:21",
+    "resolution": "2K",
+    "featured": true,
+    "aspectRatio": "16:9",
+    "displayOrder": 1,
+    "createdAt": "2026-07-02T23:20:15.986Z",
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "d20bc720-2e59-45a5-bf07-c0a5fe9ce04e",
@@ -27,9 +43,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 1,
+    "displayOrder": 2,
     "createdAt": "2026-07-02T10:18:06.770Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "53cf1417-0719-44ce-b02a-c5aa61970e6a",
@@ -43,9 +59,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 2,
+    "displayOrder": 3,
     "createdAt": "2026-07-02T10:30:28.815Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "d2a25ce5-6e03-4069-abdf-11c4defb50d2",
@@ -59,9 +75,9 @@
     "resolution": "2K",
     "featured": true,
     "aspectRatio": "9:16",
-    "displayOrder": 3,
+    "displayOrder": 4,
     "createdAt": "2026-07-01T12:55:53.519Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "e91ffdd4-0b4b-41c8-b6d0-357290ce057d",
@@ -75,9 +91,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 4,
+    "displayOrder": 5,
     "createdAt": "2026-07-02T10:34:14.562Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "45edbf63-72e3-4ad7-9623-c18a34492565",
@@ -91,9 +107,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 5,
+    "displayOrder": 6,
     "createdAt": "2026-07-02T10:51:45.105Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "6aac3ace-03cc-4680-bced-84324a3b42b3",
@@ -107,9 +123,9 @@
     "resolution": "2K",
     "featured": true,
     "aspectRatio": "16:9",
-    "displayOrder": 6,
+    "displayOrder": 7,
     "createdAt": "2026-07-02T16:54:22.370Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "d60eadf6-d3dd-4479-aa53-b1bfc037ff8e",
@@ -122,9 +138,9 @@
     "duration": "0:23",
     "resolution": "2K",
     "featured": true,
-    "displayOrder": 7,
+    "displayOrder": 9,
     "createdAt": "2026-07-01T02:20:50.358Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z",
+    "updatedAt": "2026-07-02T23:23:12.743Z",
     "aspectRatio": "16:9"
   },
   {
@@ -139,9 +155,9 @@
     "resolution": "4K",
     "featured": true,
     "aspectRatio": "9:16",
-    "displayOrder": 8,
+    "displayOrder": 10,
     "createdAt": "2026-07-01T11:45:53.473Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "42acc962-9966-4f9d-8de7-b1808aa71ee4",
@@ -155,25 +171,9 @@
     "resolution": "4K",
     "featured": true,
     "aspectRatio": "9:16",
-    "displayOrder": 9,
+    "displayOrder": 11,
     "createdAt": "2026-07-02T11:24:09.695Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
-  },
-  {
-    "id": "5f5059e4-6f10-4bae-ac3e-f17379a95d3b",
-    "title": "",
-    "subtitle": "",
-    "videoId": "",
-    "thumbnail": "/uploads/thumbnails/4f9449e5-20a7-433e-9f02-624b0eebf763.jpg",
-    "category": "promo-visuals",
-    "badge": "Promo Visual",
-    "duration": "—",
-    "resolution": "—",
-    "featured": false,
-    "aspectRatio": "16:9",
-    "displayOrder": 10,
-    "createdAt": "2026-07-02T11:35:20.054Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "ef7b5355-ab45-4971-a87d-e588e56853a2",
@@ -187,9 +187,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 11,
+    "displayOrder": 12,
     "createdAt": "2026-07-02T11:35:40.176Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "0a8f1a1a-91c3-488c-9695-97b069b1598e",
@@ -203,9 +203,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 12,
+    "displayOrder": 13,
     "createdAt": "2026-07-02T11:35:31.417Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "5e7ffe66-825f-4c1f-8683-d2c1b874c005",
@@ -219,9 +219,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 13,
+    "displayOrder": 14,
     "createdAt": "2026-07-02T11:51:18.220Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "ad95a537-dc18-42d1-aefa-f949be6fff52",
@@ -235,9 +235,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 14,
+    "displayOrder": 15,
     "createdAt": "2026-07-02T11:51:26.576Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   },
   {
     "id": "c065ea3a-94d9-40b2-9b1e-105c00de9d3d",
@@ -251,8 +251,8 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 15,
+    "displayOrder": 16,
     "createdAt": "2026-07-02T11:51:36.549Z",
-    "updatedAt": "2026-07-02T16:55:58.226Z"
+    "updatedAt": "2026-07-02T23:23:12.743Z"
   }
 ]
