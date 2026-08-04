@@ -381,105 +381,21 @@ export const localizationProcess = [
   },
 ]
 
-export const aboutBio = [
-  'My professional journey started with language, communication, and cultural understanding. I studied English Language Teaching at Middle East Technical University, where I built a strong foundation in English, education, and cross-cultural communication.',
-  'Over the years, I turned this background into professional translation and localization experience, working with gaming, e-commerce, technology, academic, and business-related content. I worked with companies such as Limon Games and Kopazar.com, where I translated and localized mobile games, websites, app store listings, support content, and marketing materials.',
-  'My experience in the game industry helped me understand how players interact with games, how game content should feel natural in different languages, and how small wording choices can affect user experience, clarity, and trust.',
-  'In recent years, I also expanded into web development, creative production, and AI-assisted workflows. I completed a Full Stack Developer Bootcamp and worked on web applications, admin dashboards, QR menu systems, and small creative game-related projects. This technical background helps me better understand digital products, UI text, user flows, and the production needs of modern game and app teams.',
-  'Today, I bring together localization, game marketing, creative visuals, content production, and technical understanding to help mobile games and digital products communicate better with their target audiences.',
+export const aboutIntro = [
+  'I create AI-assisted video and visual ad creatives for games, apps, digital products, and local businesses.',
+  'My work focuses on short-form ads, promo visuals, UGC-style concepts, gameplay-based creatives, thumbnails, end cards, and platform-ready assets for social media and paid ad channels such as TikTok, Instagram, YouTube Shorts, Google Ads, and Meta Ads.',
+  'My background combines game localization, creative content production, digital communication, and web technologies. I have worked with mobile game content, app store texts, website materials, customer-facing copy, and international communication, which helps me understand both the product and the audience behind each creative.',
+  'Today, I use this mix of localization, game industry experience, AI tools, and creative production to help brands and digital products present themselves clearly, visually, and effectively.',
 ]
 
-export const aboutExperience = [
-  {
-    title: 'Customer Experience & Localization Specialist',
-    company: 'Kopazar.com',
-    period: 'Sep 2024 – Present',
-    description:
-      'Manage customer communication processes and provide bilingual support for local and international clients. Support communication with foreign partners, participate in meetings as an interpreter, and contribute to website translation, content adaptation, and localization when needed.',
-    skills: [
-      'Bilingual Support',
-      'Customer Communication',
-      'Interpreting',
-      'Website Localization',
-      'Business Communication',
-      'Content Adaptation',
-    ],
-    icon: 'users' as const,
-  },
-  {
-    title: 'Creative Web & Digital Projects',
-    company: 'Self-employed',
-    period: 'Jun 2024 – Present',
-    description:
-      'Build small web applications, QR menu systems, admin dashboards, and creative digital projects using JavaScript and React. Also work on AI-assisted visual and content workflows, especially for mobile game ads, promotional content, and creative testing.',
-    skills: [
-      'React',
-      'JavaScript',
-      'Web Applications',
-      'Admin Dashboards',
-      'Creative Workflows',
-      'AI-assisted Production',
-      'Game-related Projects',
-    ],
-    icon: 'code' as const,
-  },
-  {
-    title: 'Freelance Translator',
-    company: 'Self-employed',
-    period: 'Apr 2012 – Jun 2023',
-    description:
-      'Provided English–Turkish and Turkish–English translation services for individual clients and professionals. Worked on academic texts, medical reports, theses, contract-related documents, technology content, and game-related materials with a focus on accuracy, clarity, and context.',
-    skills: [
-      'English–Turkish Translation',
-      'Turkish–English Translation',
-      'Academic Translation',
-      'Medical Reports',
-      'Technology Content',
-      'Game Translation',
-    ],
-    icon: 'globe' as const,
-  },
-  {
-    title: 'Localization Specialist',
-    company: 'Limon Games',
-    period: 'Jan 2016 – Oct 2021',
-    description:
-      'Translated and localized mobile games, website content, in-game text, app store listings, and marketing-related materials. Worked closely with the development team to ensure accurate text adaptation and supported communication with international clients and partners.',
-    skills: [
-      'Game Localization',
-      'Mobile Games',
-      'In-game Text',
-      'Website Translation',
-      'App Store Localization',
-      'International Communication',
-    ],
-    icon: 'globe' as const,
-  },
-  {
-    title: 'Translator & Content Specialist',
-    company: 'Kopazar.com',
-    period: 'Oct 2011 – Nov 2015',
-    description:
-      'Supported international customers through bilingual communication in English and Turkish. Translated and localized website content, participated in live meetings as an interpreter, and created blog and news content for gaming and e-commerce audiences.',
-    skills: [
-      'Bilingual Communication',
-      'Website Localization',
-      'Interpreting',
-      'Content Creation',
-      'Blog Writing',
-      'Gaming & E-commerce Content',
-    ],
-    icon: 'book' as const,
-  },
+export const aboutBio = [
+  'My professional journey started with language, communication, and cultural understanding. I studied English Language Teaching at Middle East Technical University and later built experience in translation, localization, and digital content across gaming, e-commerce, technology, and business-related fields.',
+  'Working with companies such as Limon Games and Kopazar.com helped me understand how games, apps, and digital products communicate with different audiences. I worked on mobile game content, app store texts, website materials, customer-facing copy, marketing content, and international communication.',
+  'I expanded this background into creative production and AI-assisted workflows. Today, I create short-form ad videos, promo visuals, UGC-style concepts, gameplay-based creatives, thumbnails, end cards, and platform-ready assets for games, apps, digital products, and local businesses.',
+  'Over time, this path shaped how I approach creative work: with attention to audience, product context, and clear visual communication.',
 ]
 
 export const aboutValues = [
-  {
-    title: 'Clear Communication',
-    description:
-      'I believe strong communication is the foundation of every successful project. Whether I am localizing a game, adapting marketing content, or working on a creative asset, I focus on making the message clear, natural, and easy to understand.',
-    icon: 'message' as const,
-  },
   {
     title: 'Cultural Awareness',
     description:

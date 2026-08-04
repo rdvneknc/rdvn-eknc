@@ -9,8 +9,8 @@ import SiteLogo from '@/components/SiteLogo'
 import { siteConfig } from '@/data/site'
 
 const navItems = [
-  { href: '/localization', label: 'Localization' },
   { href: '/ad-creatives', label: 'Ad Creatives' },
+  { href: '/localization', label: 'Localization' },
   { href: '/about', label: 'About' },
 ]
 

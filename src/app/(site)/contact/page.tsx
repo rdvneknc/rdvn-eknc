@@ -167,7 +167,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-1">WhatsApp</h3>
                     <a 
-                      href="https://wa.me/905530948822?text=Merhaba%2C%20websitenizden%20ulaşıyorum"
+                      href="https://wa.me/37253546911?text=Merhaba%2C%20websitenizden%20ulaşıyorum"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-green-400 hover:text-green-300 transition-colors inline-block"
@@ -369,7 +369,7 @@ export default function Contact() {
                 {
                   icon: MessageSquare,
                   name: 'WhatsApp',
-                  url: 'https://wa.me/905530948822?text=Merhaba%2C%20websitenizden%20ulaşıyorum',
+                  url: 'https://wa.me/37253546911?text=Merhaba%2C%20websitenizden%20ulaşıyorum',
                   description: 'Quick message',
                   color: 'text-green-400 hover:text-green-300'
                 },

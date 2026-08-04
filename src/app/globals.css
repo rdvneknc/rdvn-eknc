@@ -885,6 +885,17 @@
     margin: 0;
   }
 
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 720px;
+  }
+
+  .about-intro .content-page-description {
+    max-width: none;
+  }
+
   .content-section {
     margin-bottom: 64px;
   }
