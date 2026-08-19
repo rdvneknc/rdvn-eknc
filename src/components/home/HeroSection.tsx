@@ -47,16 +47,17 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="section-label mb-4">Creative ads that get people to play</p>
+            <p className="section-label mb-4">Creative ads powered by ideas, AI & storytelling</p>
 
             <h1 className="hero-title">
-              Mobile Game Ads &<br />
-              <span className="gradient-text">Creative Visuals</span>
+              AI-Powered Creative Ads &<br />
+              <span className="gradient-text">Visual Content</span>
             </h1>
 
             <p className="hero-description">
-              I create scroll-stopping short video ads, UGC-style creatives, game visuals,
-              and localized ad content for mobile games and digital products.
+              I create scroll-stopping video ads, UGC-style creatives, promo visuals, and localized
+              content for brands, apps, games, and digital products — combining AI tools with
+              hands-on creative production.
             </p>
 
             <div className="hero-actions">

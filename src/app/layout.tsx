@@ -6,9 +6,9 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ridvan Ekinci — Mobile Game Ads & Creative Visuals',
+  title: 'Ridvan Ekinci — AI-Powered Creative Ads & Visual Content',
   description:
-    'Scroll-stopping mobile game ad videos, UGC-style creatives, and localized ad content for games and digital products.',
+    'I create scroll-stopping video ads, UGC-style creatives, promo visuals, and localized content for brands, apps, games, and digital products — combining AI tools with hands-on creative production.',
   icons: {
     icon: '/favicon.ico',
   },

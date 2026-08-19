@@ -28,9 +28,7 @@ const AdCreativesPage = () => {
 
   const gridUnits = useMemo((): PortfolioGridUnit[] => {
     if (activeFilter === 'all') {
-      return sortPortfolioByDisplayOrder(
-        portfolioItems.filter((item) => !isPromoVisualItem(item))
-      ).map((item) => ({ kind: 'card' as const, item, key: item.id }))
+      return buildPortfolioGridUnits(portfolioItems)
     }
 
     if (activeFilter === 'promo-visuals') {

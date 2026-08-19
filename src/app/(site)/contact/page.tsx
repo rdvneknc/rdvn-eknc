@@ -167,7 +167,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-1">WhatsApp</h3>
                     <a 
-                      href="https://wa.me/37253546911?text=Merhaba%2C%20websitenizden%20ulaşıyorum"
+                      href="https://wa.me/37253546911?text=Hi%2C%20I%27m%20contacting%20you%20through%20your%20website."
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-green-400 hover:text-green-300 transition-colors inline-block"
@@ -285,10 +285,11 @@ export default function Contact() {
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white transition-colors"
                   >
                     <option value="">Select a topic</option>
-                    <option value="translation">Translation & Localization</option>
-                    <option value="development">Web Development</option>
-                    <option value="consultation">Technical Consultation</option>
-                    <option value="training">Communication Training</option>
+                    <option value="video-ads">AI-Powered Video Ads</option>
+                    <option value="ugc-creatives">UGC-Style Creatives</option>
+                    <option value="promo-visuals">Promo Visuals</option>
+                    <option value="ad-copy-localization">Ad Copy & Localization</option>
+                    <option value="content-package">Creative Content Package</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
@@ -369,7 +370,7 @@ export default function Contact() {
                 {
                   icon: MessageSquare,
                   name: 'WhatsApp',
-                  url: 'https://wa.me/37253546911?text=Merhaba%2C%20websitenizden%20ulaşıyorum',
+                  url: 'https://wa.me/37253546911?text=Hi%2C%20I%27m%20contacting%20you%20through%20your%20website.',
                   description: 'Quick message',
                   color: 'text-green-400 hover:text-green-300'
                 },
