@@ -2758,6 +2758,18 @@
   margin: 0 0 18px;
 }
 
+.admin-table-controls {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.admin-table-controls .admin-field {
+  min-width: 220px;
+  max-width: 280px;
+}
+
 .admin-btn {
   display: inline-flex;
   align-items: center;

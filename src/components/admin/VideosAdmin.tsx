@@ -34,6 +34,25 @@ const emptyPromoForm = {
   aspectRatio: '1:1' as VideoAspectRatio,
 }
 
+type CategoryFilter = 'all' | PortfolioCategory
+type SortMode = 'manual' | 'category'
+
+const categoryFilterOptions: Array<{ value: CategoryFilter; label: string }> = [
+  { value: 'all', label: 'All Categories' },
+  ...videoCategories.map((category) => ({
+    value: category.id as PortfolioCategory,
+    label: category.label,
+  })),
+  { value: 'promo-visuals', label: 'Promo Visuals' },
+]
+
+const categorySortOrder: Record<PortfolioCategory, number> = {
+  'ai-trailers': 0,
+  'ai-gameplay': 1,
+  'ugc-ai-ads': 2,
+  'promo-visuals': 3,
+}
+
 const VideosAdmin = () => {
   const [items, setItems] = useState<PortfolioItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -48,9 +67,28 @@ const VideosAdmin = () => {
   const [dragId, setDragId] = useState<string | null>(null)
   const [overId, setOverId] = useState<string | null>(null)
   const [reordering, setReordering] = useState(false)
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all')
+  const [sortMode, setSortMode] = useState<SortMode>('manual')
 
   const featuredCount = items.filter((item) => item.featured).length
   const sortedItems = useMemo(() => sortPortfolioByDisplayOrder(items), [items])
+  const canReorder = sortMode === 'manual'
+  const visibleItems = useMemo(() => {
+    const filtered =
+      categoryFilter === 'all'
+        ? sortedItems
+        : sortedItems.filter((item) => item.category === categoryFilter)
+
+    if (sortMode === 'category') {
+      return [...filtered].sort((a, b) => {
+        const byCategory = categorySortOrder[a.category] - categorySortOrder[b.category]
+        if (byCategory !== 0) return byCategory
+        return (a.displayOrder ?? 0) - (b.displayOrder ?? 0)
+      })
+    }
+
+    return filtered
+  }, [categoryFilter, sortMode, sortedItems])
 
   const loadItems = async () => {
     setLoading(true)
@@ -239,7 +277,7 @@ const VideosAdmin = () => {
   }
 
   const handleDropOnItem = (targetId: string) => {
-    if (!dragId || dragId === targetId || reordering) return
+    if (!canReorder || !dragId || dragId === targetId || reordering) return
     const nextItems = reorderById(sortedItems, dragId, targetId)
     void persistOrder(nextItems)
   }
@@ -267,6 +305,30 @@ const VideosAdmin = () => {
       </div>
 
       {error && <div className="admin-alert">{error}</div>}
+
+      <div className="admin-card admin-table-controls">
+        <label className="admin-field">
+          <span>Category</span>
+          <select
+            value={categoryFilter}
+            onChange={(event) => setCategoryFilter(event.target.value as CategoryFilter)}
+          >
+            {categoryFilterOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="admin-field">
+          <span>Sort</span>
+          <select value={sortMode} onChange={(event) => setSortMode(event.target.value as SortMode)}>
+            <option value="manual">Manual (Drag Order)</option>
+            <option value="category">By Category</option>
+          </select>
+        </label>
+      </div>
 
       {showForm && (
         <form onSubmit={handleSubmit} className="admin-card admin-form">
@@ -478,8 +540,8 @@ const VideosAdmin = () => {
       <div className="admin-card">
         {loading ? (
           <p className="admin-empty">Loading videos...</p>
-        ) : items.length === 0 ? (
-          <p className="admin-empty">No videos yet. Add your first creative.</p>
+        ) : visibleItems.length === 0 ? (
+          <p className="admin-empty">No items for this category.</p>
         ) : (
           <div className="admin-table-wrap">
             <table className="admin-table">
@@ -493,7 +555,7 @@ const VideosAdmin = () => {
                 </tr>
               </thead>
               <tbody>
-                {sortedItems.map((item) => {
+                {visibleItems.map((item) => {
                   const isPromo = isPromoVisualItem(item)
                   const thumb =
                     item.thumbnail ??
@@ -510,6 +572,7 @@ const VideosAdmin = () => {
                         isDropTarget ? 'admin-table-row--over' : ''
                       }`}
                       onDragOver={(event) => {
+                        if (!canReorder) return
                         event.preventDefault()
                         if (dragId && dragId !== item.id) {
                           setOverId(item.id)
@@ -519,6 +582,7 @@ const VideosAdmin = () => {
                         if (overId === item.id) setOverId(null)
                       }}
                       onDrop={(event) => {
+                        if (!canReorder) return
                         event.preventDefault()
                         handleDropOnItem(item.id)
                       }}
@@ -528,9 +592,16 @@ const VideosAdmin = () => {
                           role="button"
                           tabIndex={0}
                           className="admin-drag-handle"
-                          draggable={!reordering}
-                          aria-label="Drag to reorder"
-                          onDragStart={() => setDragId(item.id)}
+                          draggable={!reordering && canReorder}
+                          aria-label={
+                            canReorder
+                              ? 'Drag to reorder'
+                              : 'Reorder is available only in Manual sort'
+                          }
+                          onDragStart={() => {
+                            if (!canReorder) return
+                            setDragId(item.id)
+                          }}
                           onDragEnd={() => {
                             setDragId(null)
                             setOverId(null)
