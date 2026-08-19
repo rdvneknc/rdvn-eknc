@@ -2,7 +2,7 @@
   {
     "id": "9c962d68-a830-44c2-8776-4df8ba366e3f",
     "title": "Airlivo E-Sim Youtube",
-    "subtitle": "Youtube shorts video for Airlivo youtube channel",
+    "subtitle": "Youtube shorts video for Airlivo youtube and instagram channel",
     "videoId": "Cv0hGv_8_Sw",
     "thumbnail": "/uploads/thumbnails/65c57474-7ca2-4de1-baa6-10c221369097.png",
     "category": "ugc-ai-ads",
@@ -13,23 +13,7 @@
     "aspectRatio": "9:16",
     "displayOrder": 0,
     "createdAt": "2026-08-19T10:23:40.249Z",
-    "updatedAt": "2026-08-19T12:35:53.310Z"
-  },
-  {
-    "id": "ddeb2275-9c79-4b70-8f1a-99f3ecb62f02",
-    "title": "Ottoman Janissary",
-    "subtitle": "A janissary from the Ottoman Army",
-    "videoId": "pn5kLmkdRFU",
-    "thumbnail": "/uploads/thumbnails/7b6bc729-e3c1-4fbe-9d0e-e58fce56fb8f.jpg",
-    "category": "ai-trailers",
-    "badge": "AI Trailer",
-    "duration": "0:21",
-    "resolution": "4K",
-    "featured": true,
-    "aspectRatio": "9:16",
-    "displayOrder": 1,
-    "createdAt": "2026-07-01T11:45:53.473Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "1767456e-121a-451e-8fa4-9273bd1f73eb",
@@ -43,9 +27,25 @@
     "resolution": "2K",
     "featured": true,
     "aspectRatio": "16:9",
-    "displayOrder": 2,
+    "displayOrder": 1,
     "createdAt": "2026-07-02T23:20:15.986Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "ddeb2275-9c79-4b70-8f1a-99f3ecb62f02",
+    "title": "Ottoman Janissary",
+    "subtitle": "A janissary from the Ottoman Army",
+    "videoId": "pn5kLmkdRFU",
+    "thumbnail": "/uploads/thumbnails/7b6bc729-e3c1-4fbe-9d0e-e58fce56fb8f.jpg",
+    "category": "ai-trailers",
+    "badge": "AI Trailer",
+    "duration": "0:21",
+    "resolution": "4K",
+    "featured": true,
+    "aspectRatio": "9:16",
+    "displayOrder": 2,
+    "createdAt": "2026-07-01T11:45:53.473Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "d20bc720-2e59-45a5-bf07-c0a5fe9ce04e",
@@ -61,7 +61,7 @@
     "aspectRatio": "16:9",
     "displayOrder": 3,
     "createdAt": "2026-07-02T10:18:06.770Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "53cf1417-0719-44ce-b02a-c5aa61970e6a",
@@ -77,7 +77,7 @@
     "aspectRatio": "16:9",
     "displayOrder": 4,
     "createdAt": "2026-07-02T10:30:28.815Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "ca008fee-a66e-4382-b87d-8ce60025ad02",
@@ -93,7 +93,23 @@
     "aspectRatio": "16:9",
     "displayOrder": 5,
     "createdAt": "2026-08-19T12:26:36.256Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "a933cf1f-723d-4c48-a8b2-983a1a2cef02",
+    "title": "Soccer All Stars AI + Gameplay Ad",
+    "subtitle": "9:16 video ad for Soccer AllStars onlinemobile football game",
+    "videoId": "I9eLVVURnI0",
+    "thumbnail": "/uploads/thumbnails/2a44e68e-38e6-406a-a872-fb2b4fa3af54.png",
+    "category": "ai-gameplay",
+    "badge": "AI + Gameplay",
+    "duration": "0:23",
+    "resolution": "4K",
+    "featured": true,
+    "aspectRatio": "9:16",
+    "displayOrder": 6,
+    "createdAt": "2026-08-19T15:13:30.075Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "d2a25ce5-6e03-4069-abdf-11c4defb50d2",
@@ -107,9 +123,9 @@
     "resolution": "2K",
     "featured": true,
     "aspectRatio": "9:16",
-    "displayOrder": 6,
+    "displayOrder": 7,
     "createdAt": "2026-07-01T12:55:53.519Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "e91ffdd4-0b4b-41c8-b6d0-357290ce057d",
@@ -123,9 +139,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 7,
+    "displayOrder": 8,
     "createdAt": "2026-07-02T10:34:14.562Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "fb4f82e5-6238-435d-ba36-f803d480e58d",
@@ -139,9 +155,9 @@
     "resolution": "2K",
     "featured": true,
     "aspectRatio": "9:16",
-    "displayOrder": 8,
+    "displayOrder": 9,
     "createdAt": "2026-07-01T12:48:57.623Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "45edbf63-72e3-4ad7-9623-c18a34492565",
@@ -155,9 +171,9 @@
     "resolution": "—",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 9,
+    "displayOrder": 10,
     "createdAt": "2026-07-02T10:51:45.105Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "cd351599-3e78-4e08-b449-9cd1bfa0d177",
@@ -171,9 +187,9 @@
     "resolution": "4K",
     "featured": false,
     "aspectRatio": "16:9",
-    "displayOrder": 10,
+    "displayOrder": 11,
     "createdAt": "2026-08-19T11:45:29.362Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "42acc962-9966-4f9d-8de7-b1808aa71ee4",
@@ -187,9 +203,9 @@
     "resolution": "4K",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 11,
+    "displayOrder": 12,
     "createdAt": "2026-07-02T11:24:09.695Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "6aac3ace-03cc-4680-bced-84324a3b42b3",
@@ -203,9 +219,9 @@
     "resolution": "2K",
     "featured": true,
     "aspectRatio": "16:9",
-    "displayOrder": 12,
+    "displayOrder": 13,
     "createdAt": "2026-07-02T16:54:22.370Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "56e9d9cf-6131-418c-850d-8a32197be49f",
@@ -219,105 +235,25 @@
     "resolution": "4K",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 13,
+    "displayOrder": 14,
     "createdAt": "2026-08-19T10:28:57.499Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
-    "id": "d60eadf6-d3dd-4479-aa53-b1bfc037ff8e",
-    "title": "Ottoman Siege",
-    "subtitle": "A siege scene from Ottoman Wars mobile strategy game",
-    "videoId": "ut2eyzxljpQ",
-    "thumbnail": "/uploads/thumbnails/8aadec6d-81e2-4dbf-bfae-d99965b8b670.jpg",
+    "id": "3cbde17a-70f9-45af-9335-f5f617bc9f97",
+    "title": "Ottoman Wars Gameplay Ad",
+    "subtitle": "AI Intro + Gameplay ad video for Ottoman Wars mobile game",
+    "videoId": "cS0AeFxxSLE",
+    "thumbnail": "/uploads/thumbnails/acfac9a4-4b03-42f5-abc0-11f5d764cd79.png",
     "category": "ai-gameplay",
     "badge": "AI + Gameplay",
-    "duration": "0:23",
-    "resolution": "2K",
-    "featured": true,
-    "displayOrder": 14,
-    "createdAt": "2026-07-01T02:20:50.358Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z",
-    "aspectRatio": "16:9"
-  },
-  {
-    "id": "ef7b5355-ab45-4971-a87d-e588e56853a2",
-    "title": "",
-    "subtitle": "",
-    "videoId": "",
-    "thumbnail": "/uploads/thumbnails/b47f73dc-d4fd-40fa-9e52-bc9f87360a29.jpg",
-    "category": "promo-visuals",
-    "badge": "Promo Visual",
-    "duration": "—",
-    "resolution": "—",
+    "duration": "0:21",
+    "resolution": "4K",
     "featured": false,
-    "aspectRatio": "16:9",
+    "aspectRatio": "9:16",
     "displayOrder": 15,
-    "createdAt": "2026-07-02T11:35:40.176Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
-  },
-  {
-    "id": "0a8f1a1a-91c3-488c-9695-97b069b1598e",
-    "title": "",
-    "subtitle": "",
-    "videoId": "",
-    "thumbnail": "/uploads/thumbnails/d4051984-bcd3-47bf-a3d4-55dd12771c2b.jpg",
-    "category": "promo-visuals",
-    "badge": "Promo Visual",
-    "duration": "—",
-    "resolution": "—",
-    "featured": false,
-    "aspectRatio": "9:16",
-    "displayOrder": 16,
-    "createdAt": "2026-07-02T11:35:31.417Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
-  },
-  {
-    "id": "5e7ffe66-825f-4c1f-8683-d2c1b874c005",
-    "title": "",
-    "subtitle": "",
-    "videoId": "",
-    "thumbnail": "/uploads/thumbnails/88bda885-2d92-4c90-814a-ff22fc8d3252.jpg",
-    "category": "promo-visuals",
-    "badge": "Promo Visual",
-    "duration": "—",
-    "resolution": "—",
-    "featured": false,
-    "aspectRatio": "9:16",
-    "displayOrder": 17,
-    "createdAt": "2026-07-02T11:51:18.220Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
-  },
-  {
-    "id": "ad95a537-dc18-42d1-aefa-f949be6fff52",
-    "title": "",
-    "subtitle": "",
-    "videoId": "",
-    "thumbnail": "/uploads/thumbnails/b059a489-6644-4efd-9fb4-14829c6cfc5d.jpg",
-    "category": "promo-visuals",
-    "badge": "Promo Visual",
-    "duration": "—",
-    "resolution": "—",
-    "featured": false,
-    "aspectRatio": "9:16",
-    "displayOrder": 18,
-    "createdAt": "2026-07-02T11:51:26.576Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
-  },
-  {
-    "id": "c065ea3a-94d9-40b2-9b1e-105c00de9d3d",
-    "title": "",
-    "subtitle": "",
-    "videoId": "",
-    "thumbnail": "/uploads/thumbnails/1d69058a-82b1-4346-a7f1-e6275e8e0360.jpg",
-    "category": "promo-visuals",
-    "badge": "Promo Visual",
-    "duration": "—",
-    "resolution": "—",
-    "featured": false,
-    "aspectRatio": "9:16",
-    "displayOrder": 19,
-    "createdAt": "2026-07-02T11:51:36.549Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "createdAt": "2026-08-19T12:43:16.849Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   },
   {
     "id": "deae3654-83a0-458b-8fab-1670187d39aa",
@@ -331,8 +267,168 @@
     "resolution": "4K",
     "featured": false,
     "aspectRatio": "9:16",
-    "displayOrder": 20,
+    "displayOrder": 16,
     "createdAt": "2026-08-19T10:54:10.689Z",
-    "updatedAt": "2026-08-19T12:34:26.481Z"
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "d60eadf6-d3dd-4479-aa53-b1bfc037ff8e",
+    "title": "Ottoman Siege",
+    "subtitle": "A siege scene from Ottoman Wars mobile strategy game",
+    "videoId": "ut2eyzxljpQ",
+    "thumbnail": "/uploads/thumbnails/8aadec6d-81e2-4dbf-bfae-d99965b8b670.jpg",
+    "category": "ai-gameplay",
+    "badge": "AI + Gameplay",
+    "duration": "0:23",
+    "resolution": "2K",
+    "featured": true,
+    "displayOrder": 17,
+    "createdAt": "2026-07-01T02:20:50.358Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z",
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "0a8f1a1a-91c3-488c-9695-97b069b1598e",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/d4051984-bcd3-47bf-a3d4-55dd12771c2b.jpg",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 18,
+    "createdAt": "2026-07-02T11:35:31.417Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "5e7ffe66-825f-4c1f-8683-d2c1b874c005",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/88bda885-2d92-4c90-814a-ff22fc8d3252.jpg",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 19,
+    "createdAt": "2026-07-02T11:51:18.220Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "7119a1ed-8a62-4f33-95fe-3b0fc886f2c3",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/eba3d527-931a-4577-bc82-6072c0dadb8d.png",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 20,
+    "createdAt": "2026-08-19T14:04:25.690Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "ef7b5355-ab45-4971-a87d-e588e56853a2",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/b47f73dc-d4fd-40fa-9e52-bc9f87360a29.jpg",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "16:9",
+    "displayOrder": 21,
+    "createdAt": "2026-07-02T11:35:40.176Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "147dd0a4-d3fc-4d15-b865-fef8b8ea1153",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/457613dc-231c-42a2-8987-af5f31fbf8f5.png",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "16:9",
+    "displayOrder": 22,
+    "createdAt": "2026-08-19T13:08:48.137Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "ad95a537-dc18-42d1-aefa-f949be6fff52",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/b059a489-6644-4efd-9fb4-14829c6cfc5d.jpg",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 23,
+    "createdAt": "2026-07-02T11:51:26.576Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "c065ea3a-94d9-40b2-9b1e-105c00de9d3d",
+    "title": "",
+    "subtitle": "",
+    "videoId": "",
+    "thumbnail": "/uploads/thumbnails/1d69058a-82b1-4346-a7f1-e6275e8e0360.jpg",
+    "category": "promo-visuals",
+    "badge": "Promo Visual",
+    "duration": "—",
+    "resolution": "—",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 24,
+    "createdAt": "2026-07-02T11:51:36.549Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "efbc1fe8-3b14-43d8-8eda-efadb9a6eade",
+    "title": "Airlivo E-Sim Youtube 4",
+    "subtitle": "Youtube shorts video for Airlivo youtube and instagram channel",
+    "videoId": "nLxIf0GN4Hg",
+    "thumbnail": "/uploads/thumbnails/cda9186e-5441-477b-8ca7-b704a1d23b2f.png",
+    "category": "ugc-ai-ads",
+    "badge": "UGC",
+    "duration": "0:51",
+    "resolution": "4K",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 25,
+    "createdAt": "2026-08-19T14:00:48.382Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
+  },
+  {
+    "id": "0e1a660f-a657-491a-810d-73f4d7049d8a",
+    "title": "Ottoman Wars AI + Gameplay Ad",
+    "subtitle": "9:16 video ad for Ottoman Wars mobile strategy game",
+    "videoId": "buN3vhbDxrg",
+    "thumbnail": "/uploads/thumbnails/c8efdb5e-cf6e-43a0-b40e-50a144b719e6.png",
+    "category": "ai-gameplay",
+    "badge": "AI + Gameplay",
+    "duration": "0:22",
+    "resolution": "4K",
+    "featured": false,
+    "aspectRatio": "9:16",
+    "displayOrder": 26,
+    "createdAt": "2026-08-19T13:07:18.741Z",
+    "updatedAt": "2026-08-19T15:18:11.764Z"
   }
 ]
