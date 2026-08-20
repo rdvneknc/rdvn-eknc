@@ -957,11 +957,59 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    max-width: 720px;
   }
 
   .about-intro .content-page-description {
     max-width: none;
+  }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+
+  .about-layout-content {
+    min-width: 0;
+  }
+
+  .about-layout-aside {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-layout-content .content-page-header {
+    margin-bottom: 40px;
+  }
+
+  .about-journey-section p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+
+  .about-journey-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .about-layout {
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 48px;
+    }
+
+    .about-layout-aside {
+      justify-content: flex-end;
+    }
+
+    .about-layout-aside .about-avatar {
+      position: sticky;
+      top: calc(var(--site-nav-height) + 48px);
+      margin-top: 224px;
+    }
   }
 
   .content-section {
@@ -1401,7 +1449,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
-    align-items: center;
+    align-items: start;
   }
 
   @media (min-width: 1024px) {
@@ -1438,15 +1486,16 @@
 
   .about-avatar-image {
     background: rgba(255, 255, 255, 0.02);
-    padding: 24px;
+    padding: 0;
+    overflow: hidden;
   }
 
   .about-avatar-logo {
     width: 100% !important;
     height: 100% !important;
     max-width: none;
-    border-radius: 12px;
-    object-fit: contain;
+    border-radius: 20px;
+    object-fit: cover;
   }
 
   .about-avatar span {

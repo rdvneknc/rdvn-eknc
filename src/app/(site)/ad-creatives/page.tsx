@@ -97,8 +97,8 @@ const AdCreativesPage = () => {
           <SectionLabel>Portfolio</SectionLabel>
           <h1 className="section-title portfolio-page-title">Ad Creatives</h1>
           <p className="portfolio-page-description">
-            A selection of mobile game ad videos, UGC-style creatives, and promotional visuals.
-            Click play on any project to watch.
+            A selection of ad videos, UGC-style creatives, and promotional visuals for brands,
+            apps, games, and digital products. Click play on any project to watch.
           </p>
         </motion.header>
 

@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { BookOpen, Code, Award, Users } from 'lucide-react'
 import SectionLabel from '@/components/SectionLabel'
-import SiteLogo from '@/components/SiteLogo'
 import CtaBanner from '@/components/home/CtaBanner'
 import { aboutBio, aboutIntro, aboutValues } from '@/data/site'
 
@@ -18,30 +18,30 @@ const AboutPage = () => {
   return (
     <div className="content-page">
       <div className="page-container content-page-inner">
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="content-page-header"
-        >
-          <SectionLabel>About</SectionLabel>
-          <div className="about-intro">
-            {aboutIntro.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="content-page-description">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </motion.header>
+        <div className="about-layout">
+          <div className="about-layout-content">
+            <motion.header
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="content-page-header"
+            >
+              <SectionLabel>About</SectionLabel>
+              <div className="about-intro">
+                {aboutIntro.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)} className="content-page-description">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </motion.header>
 
-        <section className="content-section">
-          <div className="about-journey">
-            <motion.div
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            <motion.section
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="about-bio"
+              className="about-journey-section"
             >
               <div className="content-section-heading">
                 <SectionLabel>My Journey</SectionLabel>
@@ -49,19 +49,27 @@ const AboutPage = () => {
               {aboutBio.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="about-avatar about-avatar-image animate-float"
-            >
-              <SiteLogo size={280} className="about-avatar-logo" />
-            </motion.div>
+            </motion.section>
           </div>
-        </section>
+
+          <motion.aside
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="about-layout-aside"
+          >
+            <div className="about-avatar about-avatar-image">
+              <Image
+                src="/logo/rdvn (2).png"
+                alt="Ridvan Ekinci portrait"
+                width={640}
+                height={640}
+                className="about-avatar-logo"
+                priority
+              />
+            </div>
+          </motion.aside>
+        </div>
 
         <section className="content-section">
           <div className="content-section-heading">
