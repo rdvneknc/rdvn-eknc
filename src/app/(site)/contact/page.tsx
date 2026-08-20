@@ -205,11 +205,12 @@ export default function Contact() {
                 <h3 className="text-xl font-semibold mb-4 text-purple-400">Quick Response Areas</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    'Translation Projects',
-                    'Localization Services',
-                    'Web Development',
-                    'Technical Consultation',
-                    'Cross-cultural Training'
+                    'AI-Powered Video Ads',
+                    'UGC-Style Creatives',
+                    'Promo Visuals',
+                    'Ad Copy & Localization',
+                    'Creative Content Packages',
+                    'Thumbnails & End Cards',
                   ].map((area) => (
                     <div key={area} className="flex items-center">
                       <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
