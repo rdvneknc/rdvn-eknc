@@ -2,7 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, MessageCircle, MapPin, Send, MessageSquare } from 'lucide-react'
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
+  Send,
+  MessageSquare,
+  ArrowUpRight,
+  CheckCircle2,
+} from 'lucide-react'
+import SectionLabel from '@/components/SectionLabel'
 import { getVisitorLocation } from '@/services/geolocation'
 
 interface LocationData {
@@ -17,6 +27,77 @@ interface DistanceResult {
   distance: number
   location: LocationData
 }
+
+const CONTACT_EMAIL = 'ridvanekinci92@gmail.com'
+const WHATSAPP_URL =
+  'https://wa.me/37253546911?text=Hi%2C%20I%27m%20contacting%20you%20through%20your%20website.'
+
+const contactMethods = [
+  {
+    icon: Mail,
+    label: 'Email',
+    value: CONTACT_EMAIL,
+    note: 'I typically respond within 24 hours',
+    href: `mailto:${CONTACT_EMAIL}`,
+  },
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/ridvanekinci',
+    note: 'Connect for professional opportunities',
+    href: 'https://linkedin.com/in/ridvanekinci',
+  },
+  {
+    icon: Github,
+    label: 'GitHub',
+    value: 'github.com/rdvneknc',
+    note: 'Check out my development projects',
+    href: 'https://github.com/rdvneknc',
+  },
+  {
+    icon: MessageSquare,
+    label: 'WhatsApp',
+    value: 'Send me a message on WhatsApp',
+    note: null,
+    href: WHATSAPP_URL,
+  },
+]
+
+const socialLinks = [
+  {
+    icon: Linkedin,
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/ridvanekinci',
+    description: 'Professional network',
+  },
+  {
+    icon: Github,
+    name: 'GitHub',
+    url: 'https://github.com/rdvneknc',
+    description: 'Code repositories',
+  },
+  {
+    icon: MessageSquare,
+    name: 'WhatsApp',
+    url: WHATSAPP_URL,
+    description: 'Quick message',
+  },
+  {
+    icon: Mail,
+    name: 'Email',
+    url: `mailto:${CONTACT_EMAIL}`,
+    description: 'Direct contact',
+  },
+]
+
+const quickResponseAreas = [
+  'AI-Powered Video Ads',
+  'UGC-Style Creatives',
+  'Promo Visuals',
+  'Ad Copy & Localization',
+  'Creative Content Packages',
+  'Thumbnails & End Cards',
+]
 
 export default function Contact() {
   const [locationData, setLocationData] = useState<DistanceResult | null>(null)
@@ -77,370 +158,228 @@ export default function Contact() {
   }
 
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+    <div className="content-page">
+      <div className="page-container content-page-inner">
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="content-page-header"
+        >
+          <SectionLabel>Contact</SectionLabel>
+          <h1 className="section-title content-page-title">
+            Get In <span className="gradient-text">Touch</span>
+          </h1>
+          <p className="content-page-description">
+            Ready to work together? Let&apos;s discuss your project and how I can help you succeed.
+          </p>
+        </motion.header>
+
+        <div className="contact-layout">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="contact-aside"
           >
-            <MessageCircle className="w-16 h-16 mx-auto mb-6 text-purple-400" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In <span className="gradient-text">Touch</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Ready to work together? Let&apos;s discuss your project and how I can help you succeed
-            </p>
-          </motion.div>
-        </div>
-      </section>
+            <div className="contact-methods">
+              {contactMethods.map((method) => (
+                <a
+                  key={method.label}
+                  href={method.href}
+                  target={method.href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  className="contact-method"
+                >
+                  <span className="contact-method-icon">
+                    <method.icon />
+                  </span>
+                  <span className="contact-method-body">
+                    <span className="contact-method-label">{method.label}</span>
+                    <span className="contact-method-value">{method.value}</span>
+                    {method.note && <span className="contact-method-note">{method.note}</span>}
+                  </span>
+                  <ArrowUpRight className="contact-method-arrow" />
+                </a>
+              ))}
 
-      {/* Contact Information */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Details */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold mb-8">
-                Let&apos;s <span className="gradient-text">Connect</span>
-              </h2>
-              
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <Mail className="w-6 h-6 text-purple-400 mt-1" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Email</h3>
-                    <p className="text-gray-300">ridvanekinci92@gmail.com</p>
-                    <p className="text-sm text-gray-400">I typically respond within 24 hours</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <Linkedin className="w-6 h-6 text-blue-400 mt-1" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">LinkedIn</h3>
-                    <a 
-                      href="https://linkedin.com/in/ridvanekinci" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 transition-colors"
-                    >
-                      linkedin.com/in/ridvanekinci
-                    </a>
-                    <p className="text-sm text-gray-400">Connect for professional opportunities</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <Github className="w-6 h-6 text-gray-300 mt-1" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">GitHub</h3>
-                    <a 
-                      href="https://github.com/rdvneknc" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      github.com/rdvneknc
-                    </a>
-                    <p className="text-sm text-gray-400">Check out my development projects</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <MessageSquare className="w-6 h-6 text-green-400 mt-1" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">WhatsApp</h3>
-                    <a 
-                      href="https://wa.me/37253546911?text=Hi%2C%20I%27m%20contacting%20you%20through%20your%20website."
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-green-400 hover:text-green-300 transition-colors inline-block"
-                    >
-                      Send me a message on WhatsApp
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-green-400 mt-1" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Location</h3>
-                    <p className="text-gray-300">Tallinn, Estonia 🇪🇪</p>
+              <div className="contact-method contact-method--static">
+                <span className="contact-method-icon">
+                  <MapPin />
+                </span>
+                <span className="contact-method-body">
+                  <span className="contact-method-label">Location</span>
+                  <span className="contact-method-value">Tallinn, Estonia 🇪🇪</span>
+                  <span className="contact-method-note">
                     {loading ? (
-                      <p className="text-sm text-gray-400">Detecting your location...</p>
+                      'Detecting your location...'
                     ) : locationData && locationData.distance > 0 ? (
-                      <p className="text-sm text-gray-400">
+                      <>
                         I&apos;m in Tallinn, Estonia, roughly{' '}
-                        <span className="text-purple-400 font-semibold">
+                        <span className="contact-method-highlight">
                           {locationData.distance.toLocaleString()} km
                         </span>{' '}
                         away from your current location, according to your IP address.
-                      </p>
+                      </>
                     ) : (
-                      <p className="text-sm text-gray-400">My base location</p>
+                      'My base location'
                     )}
-                  </div>
-                </div>
+                  </span>
+                </span>
               </div>
+            </div>
 
-              <div className="card">
-                <h3 className="text-xl font-semibold mb-4 text-purple-400">Quick Response Areas</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    'AI-Powered Video Ads',
-                    'UGC-Style Creatives',
-                    'Promo Visuals',
-                    'Ad Copy & Localization',
-                    'Creative Content Packages',
-                    'Thumbnails & End Cards',
-                  ].map((area) => (
-                    <div key={area} className="flex items-center">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                      <span className="text-sm text-gray-300">{area}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="card"
-            >
-              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-colors"
-                      placeholder="Your first name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-colors"
-                      placeholder="Your last name"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-colors"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white transition-colors"
-                  >
-                    <option value="">Select a topic</option>
-                    <option value="video-ads">AI-Powered Video Ads</option>
-                    <option value="ugc-creatives">UGC-Style Creatives</option>
-                    <option value="promo-visuals">Promo Visuals</option>
-                    <option value="ad-copy-localization">Ad Copy & Localization</option>
-                    <option value="content-package">Creative Content Package</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-colors resize-none"
-                    placeholder="Tell me about your project or how I can help you..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full btn-primary inline-flex items-center justify-center"
-                >
-                  {submitting ? 'Sending...' : 'Send Message'}
-                  <Send className="ml-2" size={20} />
-                </button>
-              </form>
-
-              {submitSuccess && (
-                <p className="text-sm text-green-400 mt-4 text-center">
-                  Message sent successfully. I&apos;ll get back to you soon.
-                </p>
-              )}
-              {submitError && (
-                <p className="text-sm text-red-400 mt-4 text-center">{submitError}</p>
-              )}
-
-              <p className="text-sm text-gray-400 mt-4 text-center">
-                I&apos;ll get back to you within 24 hours. For urgent matters, please mention it in your message.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Links */}
-      <section className="py-20 bg-gray-800/30">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold mb-4">
-              Connect on <span className="gradient-text">Social Media</span>
-            </h2>
-            <p className="text-gray-400 mb-12">
-              Follow my work and stay updated with my latest projects and insights
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-6">
-              {[
-                {
-                  icon: Linkedin,
-                  name: 'LinkedIn',
-                  url: 'https://linkedin.com/in/ridvanekinci',
-                  description: 'Professional network',
-                  color: 'text-blue-400 hover:text-blue-300'
-                },
-                {
-                  icon: Github,
-                  name: 'GitHub',
-                  url: 'https://github.com/rdvneknc',
-                  description: 'Code repositories',
-                  color: 'text-gray-300 hover:text-white'
-                },
-                {
-                  icon: MessageSquare,
-                  name: 'WhatsApp',
-                  url: 'https://wa.me/37253546911?text=Hi%2C%20I%27m%20contacting%20you%20through%20your%20website.',
-                  description: 'Quick message',
-                  color: 'text-green-400 hover:text-green-300'
-                },
-                {
-                  icon: Mail,
-                  name: 'Email',
-                  url: 'mailto:ridvanekinci92@gmail.com',
-                  description: 'Direct contact',
-                  color: 'text-purple-400 hover:text-purple-300'
-                }
-              ].map((social, index) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group flex flex-col items-center p-6 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-purple-500/50 transition-all duration-300 hover:bg-gray-800/70"
-                >
-                  <social.icon className={`w-8 h-8 mb-3 ${social.color} transition-colors`} />
-                  <h3 className="font-semibold text-white mb-1">{social.name}</h3>
-                  <p className="text-sm text-gray-400">{social.description}</p>
-                </motion.a>
-              ))}
+            <div className="contact-areas">
+              <h2 className="contact-areas-title">Quick Response Areas</h2>
+              <ul className="contact-areas-list">
+                {quickResponseAreas.map((area) => (
+                  <li key={area} className="contact-area-item">
+                    <CheckCircle2 />
+                    {area}
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="contact-form-card"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="contact-form-title">Send a Message</h2>
+
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="contact-form-row">
+                <label className="contact-field">
+                  <span>First Name</span>
+                  <input type="text" name="firstName" required placeholder="Your first name" />
+                </label>
+                <label className="contact-field">
+                  <span>Last Name</span>
+                  <input type="text" name="lastName" required placeholder="Your last name" />
+                </label>
+              </div>
+
+              <label className="contact-field">
+                <span>Email Address</span>
+                <input type="email" name="email" required placeholder="your.email@example.com" />
+              </label>
+
+              <label className="contact-field">
+                <span>Subject</span>
+                <select name="subject" required defaultValue="">
+                  <option value="" disabled>
+                    Select a topic
+                  </option>
+                  <option value="video-ads">AI-Powered Video Ads</option>
+                  <option value="ugc-creatives">UGC-Style Creatives</option>
+                  <option value="promo-visuals">Promo Visuals</option>
+                  <option value="ad-copy-localization">Ad Copy & Localization</option>
+                  <option value="content-package">Creative Content Package</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+
+              <label className="contact-field">
+                <span>Message</span>
+                <textarea
+                  name="message"
+                  rows={5}
+                  required
+                  placeholder="Tell me about your project or how I can help you..."
+                />
+              </label>
+
+              <button type="submit" disabled={submitting} className="btn-primary contact-submit">
+                {submitting ? 'Sending...' : 'Send Message'}
+                <Send size={16} />
+              </button>
+            </form>
+
+            {submitSuccess && (
+              <p className="contact-form-status contact-form-status--success">
+                Message sent successfully. I&apos;ll get back to you soon.
+              </p>
+            )}
+            {submitError && (
+              <p className="contact-form-status contact-form-status--error">{submitError}</p>
+            )}
+
+            <p className="contact-form-footnote">
+              I&apos;ll get back to you within 24 hours. For urgent matters, please mention it in your message.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="contact-social"
+        >
+          <h2 className="section-title contact-social-title">
+            Connect on <span className="gradient-text">Social Media</span>
+          </h2>
+          <p className="contact-social-text">
+            Follow my work and stay updated with my latest projects and insights
+          </p>
+
+          <div className="contact-social-grid">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="value-card contact-social-card"
+              >
+                <span className="service-icon-wrap">
+                  <social.icon className="service-icon" />
+                </span>
+                <h3 className="value-card-title">{social.name}</h3>
+                <p className="value-card-text">{social.description}</p>
+              </a>
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="cta-banner contact-cta"
+        >
+          <div className="cta-banner-bg cta-banner-bg-placeholder" aria-hidden="true" />
+          <div className="contact-cta-content">
+            <h2 className="cta-banner-title">
               Ready to Start Your <span className="gradient-text">Project</span>?
             </h2>
-            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-              Whether you need translation services, web development, or consultation on 
+            <p className="cta-banner-text contact-cta-text">
+              Whether you need translation services, web development, or consultation on
               customer experience, I&apos;m here to help bring your vision to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:ridvanekinci92@gmail.com"
-                className="btn-primary inline-flex items-center"
-              >
+            <div className="contact-cta-actions">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-primary">
                 Send an Email
-                <Mail className="ml-2" size={20} />
+                <Mail size={18} />
               </a>
               <a
                 href="https://linkedin.com/in/ridvanekinci"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary inline-flex items-center"
+                className="btn-secondary gap-2"
               >
                 Connect on LinkedIn
-                <Linkedin className="ml-2" size={20} />
+                <Linkedin size={18} />
               </a>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </motion.section>
+      </div>
     </div>
   )
 }

@@ -127,7 +127,9 @@ const FiverrPortfolioPage = () => {
                   viewport={{ once: true }}
                   className="service-card"
                 >
-                  <Icon className="service-icon" />
+                  <span className="service-icon-wrap">
+                    <Icon className="service-icon" />
+                  </span>
                   <h3 className="service-card-title">{service.title}</h3>
                   <p className="service-card-text">{service.description}</p>
                 </motion.div>

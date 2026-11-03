@@ -5,10 +5,25 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const siteTitle = 'Ridvan Ekinci — AI-Powered Creative Ads & Visual Content'
+const siteDescription =
+  'I create scroll-stopping video ads, UGC-style creatives, promo visuals, and localized content for brands, apps, games, and digital products — combining AI tools with hands-on creative production.'
+
 export const metadata: Metadata = {
-  title: 'Ridvan Ekinci — AI-Powered Creative Ads & Visual Content',
-  description:
-    'I create scroll-stopping video ads, UGC-style creatives, promo visuals, and localized content for brands, apps, games, and digital products — combining AI tools with hands-on creative production.',
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    siteName: 'Ridvan Ekinci',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

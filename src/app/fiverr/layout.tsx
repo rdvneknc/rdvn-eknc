@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Info } from 'lucide-react'
 import SiteLogo from '@/components/SiteLogo'
+import InteractiveEffects from '@/components/InteractiveEffects'
 import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function FiverrLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <InteractiveEffects />
       <header className="navbar fiverr-navbar">
         <div className="navbar-surface">
           <div className="navbar-inner">

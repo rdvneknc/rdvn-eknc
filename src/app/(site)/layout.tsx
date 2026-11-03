@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import PageTransition from '@/components/PageTransition'
+import InteractiveEffects from '@/components/InteractiveEffects'
 
 export default function SiteLayout({
   children,
@@ -9,6 +10,7 @@ export default function SiteLayout({
 }) {
   return (
     <>
+      <InteractiveEffects />
       <Navigation />
       <main className="main-content min-h-screen">
         <PageTransition>{children}</PageTransition>

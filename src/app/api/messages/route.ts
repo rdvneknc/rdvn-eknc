@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { requireAdminSession } from '@/lib/auth'
+import { sendContactEmail } from '@/lib/email'
 import { createMessage, listMessages } from '@/lib/messages'
 
 export async function GET() {
@@ -31,9 +32,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Required fields are missing' }, { status: 400 })
     }
 
-    await createMessage(input)
+    await sendContactEmail(input)
+
+    // Best-effort local archive for the admin panel (may fail on serverless hosts).
+    try {
+      await createMessage(input)
+    } catch (error) {
+      console.warn('Contact message archived locally failed:', error)
+    }
+
     return NextResponse.json({ success: true }, { status: 201 })
-  } catch {
+  } catch (error) {
+    console.error('Contact form email failed:', error)
     return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
   }
 }
