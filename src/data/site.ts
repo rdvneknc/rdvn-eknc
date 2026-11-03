@@ -5,9 +5,9 @@ export const siteConfig = {
   location: 'Tallinn, Estonia',
   tagline: 'Creative Ads · Localization · Game Industry',
   logo: '/logo/ridvan-ekinci-logo.webp',
-  heroImage: '/logo/lastback.webp',
+  heroImage: '/logo/bannernew.jpg',
   /** Mobile-only hero background — set path when asset is ready */
-  heroMobileImage: '' as string | undefined,
+  heroMobileImage: '/logo/ridvan-banner-mobile-1080x1920.webp',
   ctaBackgroundImage: '/logo/bottom2.webp',
 }
 
