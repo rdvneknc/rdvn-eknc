@@ -7,6 +7,7 @@ import SectionLabel from '@/components/SectionLabel'
 import PortfolioGridCard from '@/components/PortfolioGridCard'
 import PortfolioPromoPair from '@/components/PortfolioPromoPair'
 import CtaBanner from '@/components/home/CtaBanner'
+import PlayableAdsSection from '@/components/home/PlayableAdsSection'
 import {
   isPromoVisualItem,
   PORTFOLIO_PAGE_SIZE,
@@ -98,7 +99,8 @@ const AdCreativesPage = () => {
           <h1 className="section-title portfolio-page-title">Ad Creatives</h1>
           <p className="portfolio-page-description">
             A selection of ad videos, UGC-style creatives, and promotional visuals for brands,
-            apps, games, and digital products. Click play on any project to watch.
+            apps, games, and digital products. Click play on any project to watch, or scroll down
+            to try the playable ads.
           </p>
         </motion.header>
 
@@ -167,6 +169,8 @@ const AdCreativesPage = () => {
             </button>
           </nav>
         )}
+
+        <PlayableAdsSection variant="page" />
       </div>
 
       <CtaBanner />
