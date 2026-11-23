@@ -10,6 +10,7 @@ import { siteConfig } from '@/data/site'
 
 const navItems = [
   { href: '/ad-creatives', label: 'Ad Creatives' },
+  { href: '/playable-ads', label: 'Playable Ads' },
   { href: '/localization', label: 'Localization' },
   { href: '/about', label: 'About' },
 ]

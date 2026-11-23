@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/SectionLabel'
 import PlayableCard from '@/components/PlayableCard'
@@ -35,6 +36,9 @@ const PlayableAdsSection = ({ variant = 'home' }: PlayableAdsSectionProps) => {
               to play it right here in your browser.
             </p>
           </motion.div>
+          <Link href="/playable-ads" className="view-all-btn hidden sm:inline-flex">
+            Open Playable Showroom
+          </Link>
         </div>
 
         <div className="playable-grid">
@@ -50,6 +54,12 @@ const PlayableAdsSection = ({ variant = 'home' }: PlayableAdsSectionProps) => {
               <PlayableCard playable={playable} />
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-8 sm:hidden text-center">
+          <Link href="/playable-ads" className="view-all-btn inline-flex">
+            Open Playable Showroom
+          </Link>
         </div>
       </div>
     </section>
