@@ -4541,42 +4541,99 @@
     isolation: isolate;
   }
 
-  .playable-thumb-poster {
+
+
+
+
+  .playable-poster {
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    gap: 10px;
+    padding: 18px 14px 44px;
     text-align: center;
+    overflow: hidden;
     background:
-      radial-gradient(circle at 30% 20%, rgba(155, 92, 255, 0.35), transparent 55%),
-      radial-gradient(circle at 75% 80%, rgba(79, 140, 255, 0.28), transparent 55%),
-      linear-gradient(180deg, #0c1426 0%, #070c18 100%);
+      radial-gradient(120% 70% at 50% 0%, color-mix(in srgb, var(--playable-accent) 45%, transparent), transparent 70%),
+      radial-gradient(90% 60% at 50% 110%, color-mix(in srgb, var(--playable-accent) 28%, transparent), transparent 70%),
+      linear-gradient(180deg, #0d1324 0%, #070b16 100%);
+    transition: transform 0.35s ease;
   }
 
-  .playable-thumb-poster-title {
-    font-size: 18px;
+  .playable-card:hover .playable-poster {
+    transform: scale(1.03);
+  }
+
+  .playable-poster-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(circle at 50% 40%, #000 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 20%, transparent 75%);
+  }
+
+  .playable-poster-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 6px;
+    border-radius: 999px;
+    color: #fff;
+    background: color-mix(in srgb, var(--playable-accent) 30%, rgba(255, 255, 255, 0.06));
+    border: 1px solid color-mix(in srgb, var(--playable-accent) 65%, transparent);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--playable-accent) 35%, transparent);
+  }
+
+  .playable-poster-ring {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    border: 2px solid var(--playable-accent);
+    animation: playable-ring 2.2s ease-out infinite;
+  }
+
+  @keyframes playable-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+
+  .playable-poster-title {
+    position: relative;
+    font-size: 19px;
     font-weight: 800;
     letter-spacing: -0.01em;
-    line-height: 1.2;
-    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.15;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
   }
 
-  .playable-thumb-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 0;
-    transform-origin: 0 0;
-    pointer-events: none;
-    background: #000;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  .playable-thumb-iframe.is-loaded {
-    opacity: 1;
+  .playable-poster-meta {
+    position: relative;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--playable-accent) 40%, #fff);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid color-mix(in srgb, var(--playable-accent) 45%, transparent);
   }
 
   .playable-thumb-shade {
@@ -4967,6 +5024,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .playable-badge-dot::after,
+    .playable-poster-ring,
     .playable-modal-overlay {
       animation: none;
     }
