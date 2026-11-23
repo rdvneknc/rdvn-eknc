@@ -12,9 +12,11 @@ export interface PlayableAd {
   genre: string
   /** Public URL of the playable's index.html */
   url: string
-  /** Optional poster image (e.g. /uploads/playables/ottoman-wars-ad-5.webp). When empty, a live preview is shown. */
+  /** Optional poster image (e.g. /uploads/playables/ottoman-wars-ad-5.webp). When empty, a styled cover is shown. */
   thumbnail?: string
   orientation?: PlayableOrientation
+  /** Accent color for the styled cover */
+  accent?: string
 }
 
 export const playableAds: PlayableAd[] = [
@@ -25,6 +27,7 @@ export const playableAds: PlayableAd[] = [
     genre: 'Sports',
     url: 'https://playableads-tau.vercel.app/soccer-all-stars/ad-01/index.html',
     orientation: 'portrait',
+    accent: '#22c55e',
   },
   {
     id: 'gumdrop-legion-ad-01',
@@ -33,6 +36,7 @@ export const playableAds: PlayableAd[] = [
     genre: 'Casual',
     url: 'https://playableads-tau.vercel.app/gumdrop-legion/ad-01/index.html',
     orientation: 'portrait',
+    accent: '#ec4899',
   },
   {
     id: 'ottoman-wars-ad-5',
@@ -42,6 +46,7 @@ export const playableAds: PlayableAd[] = [
     genre: 'Strategy',
     url: 'https://playableads-tau.vercel.app/ottoman-wars/ad-5/index.html',
     orientation: 'portrait',
+    accent: '#f59e0b',
   },
   {
     id: 'vegaslot-ad-01',
@@ -50,6 +55,7 @@ export const playableAds: PlayableAd[] = [
     genre: 'Casino',
     url: 'https://playableads-tau.vercel.app/vegaslot/ad-01/index.html',
     orientation: 'portrait',
+    accent: '#a855f7',
   },
   {
     id: 'ottoman-wars-ad-2',
@@ -59,5 +65,6 @@ export const playableAds: PlayableAd[] = [
     genre: 'Strategy',
     url: 'https://playableads-tau.vercel.app/ottoman-wars/ad-2/index.html',
     orientation: 'portrait',
+    accent: '#ef4444',
   },
 ]
