@@ -4489,3 +4489,486 @@
     }
   }
 }
+
+/* ------------------------------------------------------------------
+   Playable Ads
+------------------------------------------------------------------- */
+@layer components {
+  .playable-section--home {
+    padding-top: 0;
+  }
+
+  .playable-section--page {
+    margin-top: 56px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .playable-section-head {
+    align-items: flex-end;
+  }
+
+  .playable-section-description {
+    margin: 12px 0 0;
+    max-width: 620px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .playable-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .playable-grid-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  /* Card */
+  .playable-card .work-card-body {
+    min-height: 0;
+  }
+
+  .playable-card:hover {
+    border-color: rgba(52, 211, 153, 0.3);
+  }
+
+  .playable-thumb {
+    aspect-ratio: 9 / 16;
+    isolation: isolate;
+  }
+
+  .playable-thumb-poster {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(155, 92, 255, 0.35), transparent 55%),
+      radial-gradient(circle at 75% 80%, rgba(79, 140, 255, 0.28), transparent 55%),
+      linear-gradient(180deg, #0c1426 0%, #070c18 100%);
+  }
+
+  .playable-thumb-poster-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .playable-thumb-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .playable-thumb-iframe.is-loaded {
+    opacity: 1;
+  }
+
+  .playable-thumb-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(5, 8, 20, 0) 55%, rgba(5, 8, 20, 0.7) 100%);
+    transition: background 0.25s ease;
+  }
+
+  .playable-card:hover .playable-thumb-shade {
+    background: linear-gradient(180deg, rgba(5, 8, 20, 0.25) 0%, rgba(5, 8, 20, 0.75) 100%);
+  }
+
+  .playable-thumb-cta {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .playable-card:hover .playable-thumb-cta,
+  .playable-card:focus-visible .playable-thumb-cta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .playable-thumb-cta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #04110b;
+    background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+    box-shadow: 0 8px 24px rgba(52, 211, 153, 0.35);
+  }
+
+  @media (hover: none) {
+    .playable-thumb-cta {
+      opacity: 1;
+      transform: none;
+      align-items: flex-end;
+      padding-bottom: 40px;
+    }
+  }
+
+  .playable-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: #8ff0c8;
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(52, 211, 153, 0.38);
+  }
+
+  .playable-badge--thumb {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 3;
+    background: rgba(6, 30, 22, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .playable-badge-dot {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #34d399;
+  }
+
+  .playable-badge-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: #34d399;
+    animation: playable-pulse 1.8s ease-out infinite;
+  }
+
+  @keyframes playable-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+  }
+
+  .playable-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .playable-card-chip {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    color: #c9cfe4;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+  }
+
+  .playable-card-chip--muted {
+    color: #8a92ad;
+  }
+
+  /* Modal player */
+  .playable-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(2, 4, 12, 0.86);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: playable-fade-in 0.2s ease;
+  }
+
+  @keyframes playable-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .playable-modal {
+    --playable-chrome: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    max-width: 100%;
+  }
+
+  .playable-modal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    min-width: min(380px, 92vw);
+  }
+
+  .playable-modal-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .playable-modal-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .playable-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .playable-modal-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .playable-modal-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(155, 92, 255, 0.45);
+  }
+
+  .playable-device {
+    position: relative;
+    width: min(380px, 92vw, calc((100vh - var(--playable-chrome)) * 9 / 16));
+    width: min(380px, 92vw, calc((100dvh - var(--playable-chrome)) * 9 / 16));
+    aspect-ratio: 9 / 16;
+    padding: 10px;
+    border-radius: 46px;
+    background: linear-gradient(160deg, #1a2034 0%, #0a0e1a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 30px 90px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(0, 0, 0, 0.6) inset,
+      0 0 80px rgba(155, 92, 255, 0.18);
+  }
+
+  .playable-device--landscape {
+    width: min(960px, 92vw, calc((100vh - var(--playable-chrome)) * 16 / 9));
+    width: min(960px, 92vw, calc((100dvh - var(--playable-chrome)) * 16 / 9));
+    aspect-ratio: 16 / 9;
+    border-radius: 30px;
+  }
+
+  .playable-device-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 36px;
+    background: #000;
+  }
+
+  .playable-device--landscape .playable-device-screen {
+    border-radius: 22px;
+  }
+
+  .playable-device-iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .playable-device-iframe.is-loaded {
+    opacity: 1;
+  }
+
+  .playable-device-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .playable-spinner {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-top-color: #34d399;
+    animation: playable-spin 0.8s linear infinite;
+  }
+
+  @keyframes playable-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .playable-modal-hint {
+    margin: 0;
+    font-size: 12px;
+    color: #7f87a3;
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .playable-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .playable-grid {
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .playable-section-head {
+      align-items: flex-start;
+    }
+
+    .playable-section--page {
+      margin-top: 40px;
+      padding-top: 36px;
+    }
+
+    .playable-grid {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      margin: 0 -16px;
+      padding: 4px 16px;
+      scroll-padding: 0 16px;
+    }
+
+    .playable-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .playable-grid-item {
+      flex: 0 0 min(210px, 62vw);
+      scroll-snap-align: start;
+    }
+  }
+
+  /* Full-screen player on phones */
+  @media (max-width: 639px) {
+    .playable-modal-overlay {
+      padding: 0;
+    }
+
+    .playable-modal {
+      width: 100%;
+      height: 100%;
+      gap: 0;
+    }
+
+    .playable-modal-bar {
+      min-width: 0;
+      padding: 10px 12px;
+      padding-top: max(10px, env(safe-area-inset-top));
+      background: rgba(5, 8, 20, 0.92);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .playable-device,
+    .playable-device--landscape {
+      flex: 1;
+      width: 100%;
+      aspect-ratio: auto;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background: #000;
+    }
+
+    .playable-device-screen,
+    .playable-device--landscape .playable-device-screen {
+      border-radius: 0;
+    }
+
+    .playable-modal-hint {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .playable-badge-dot::after,
+    .playable-modal-overlay {
+      animation: none;
+    }
+  }
+}
