@@ -57,10 +57,12 @@ const PlayableCard = ({ playable }: PlayableCardProps) => {
             </span>
           </div>
 
-          <span className="playable-badge playable-badge--thumb">
-            <span className="playable-badge-dot" aria-hidden="true" />
-            Playable
-          </span>
+          {!playable.thumbnail && (
+            <span className="playable-badge playable-badge--thumb">
+              <span className="playable-badge-dot" aria-hidden="true" />
+              Playable
+            </span>
+          )}
         </div>
 
         <div className="work-card-body">
