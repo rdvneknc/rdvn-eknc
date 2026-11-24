@@ -31,6 +31,16 @@ export const playableAds: PlayableAd[] = [
     accent: '#22c55e',
   },
   {
+    id: 'bloop-grove-ad-01',
+    title: 'Bloop Grove',
+    subtitle: 'Cute match-3 puzzle playable with a colorful, satisfying combo loop.',
+    genre: 'Puzzle',
+    url: 'https://playableads-tau.vercel.app/bloop-grove/ad-01/index.html',
+    thumbnail: '/uploads/playables/bloop-grove-ad-01.webp',
+    orientation: 'portrait',
+    accent: '#84cc16',
+  },
+  {
     id: 'gumdrop-legion-ad-01',
     title: 'Gumdrop Legion',
     subtitle: 'Bite-sized gameplay hook that gets players hands-on within seconds.',
