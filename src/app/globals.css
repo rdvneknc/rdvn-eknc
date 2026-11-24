@@ -4518,7 +4518,7 @@
 
   .playable-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 18px;
   }
 
@@ -4943,7 +4943,8 @@
 
   @media (min-width: 1024px) and (max-width: 1279px) {
     .playable-grid {
-      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
   }
 
